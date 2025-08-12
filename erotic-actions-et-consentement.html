@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreyaTheGiant - Actions Érotiques et Consentement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles de base - Palette Gothique */
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #1A1A1D; /* Charbon très foncé */
+            color: #E0E0E0; /* Gris clair pour le texte principal */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .bg-primary-dark { background-color: #0D0D0F; }
+        .text-secondary-light { color: #C0C0C0; }
+        .text-accent-gold { color: #FFD700; }
+        .border-accent-gold { border-color: #FFD700; }
+        .hover-gold-text:hover { color: #FFD700; }
+
+        /* Menu spécifique */
+        .nav-link.active {
+            color: #FFD700;
+            border-left: 4px solid #FFD700;
+            font-weight: bold;
+        }
+
+        /* Styles spécifiques pour le menu mobile */
+        #mobile-menu-button {
+            z-index: 60;
+        }
+
+        /* Styles pour les sections de contenu */
+        .content-section {
+            background-color: #0D0D0F;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 2rem;
+        }
+        
+        .list-disc-gold li::marker {
+            color: #FFD700;
+        }
+        .action-item {
+            background-color: #1A1A1D;
+        }
+        .action-button {
+            transition: all 0.2s;
+        }
+        .action-button.selected {
+            background-color: #FFD700;
+            color: #1A1A1D;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col md:flex-row min-h-screen">
+
+    <!-- Bouton pour le menu mobile, visible uniquement sur les petits écrans -->
+    <button id="mobile-menu-button" class="md:hidden p-4 fixed top-4 right-4 z-50 text-secondary-light">
+        <!-- Icône de menu SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4" />
+        </svg>
+    </button>
+
+    <!-- Barre latérale (Sidebar) - Le menu de navigation unifié avec défilement -->
+    <aside id="sidebar" class="bg-primary-dark text-secondary-light w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out md:flex md:flex-col md:h-screen md:sticky md:top-0 md:z-auto overflow-y-auto z-50">
+        <div class="flex items-center justify-between px-4">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-3xl font-bold font-['Cinzel_Decorative'] text-accent-gold">FreyaTheGiant</span>
+            </a>
+            <!-- Bouton de fermeture pour le menu mobile -->
+            <button id="close-menu-button" class="md:hidden text-secondary-light hover:text-white transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    
+        <nav id="main-nav">
+            <a href="index.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Accueil</a>
+            <a href="all-categories.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Toutes les catégories</a>
+            <a href="calendrier.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Calendrier</a>
+            <a href="tableau-de-bord.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Tableau de bord</a>
+            <a href="astuces-actions-et-prix.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Astuces, actions et prix</a>
+            <a href="communication.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Communication Efficace</a>
+            <a href="finance.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Planification Financière</a>
+            <a href="monetization.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Stratégie de Monétisation</a>
+            <a href="manager-role.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Rôle du Manager</a>
+            <a href="manager-benefits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Bénéfices pour le Manager</a>
+            <a href="limits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Nos Limites Absolues</a>
+            <a href="actions-et-etat.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Actions et État</a>
+            <a href="erotic-actions-et-consentement.html" class="nav-link active block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Actions Érotiques et Consentement</a>
+            <!-- Nouvelles Catégories -->
+            <a href="promotion.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Promotion</a>
+            <a href="soutien-tdah.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Soutien TDAH</a>
+            <a href="gestion-persona.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Gérer son personnage en ligne</a>
+            <a href="support-emmotionel.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Support émotionnel pour mon homme</a>
+        </nav>
+    </aside>
+
+    <!-- Contenu principal -->
+    <main class="flex-1 p-8 md:p-12 overflow-y-auto">
+        <h1 class="text-4xl md:text-5xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Actions Érotiques et Consentement</h1>
+        <p class="text-secondary-light mb-8 text-sm">
+            Cette section liste de manière explicite et détaillée des actions et thèmes potentiels pour les sessions live. Veuillez utiliser les boutons pour indiquer clairement votre consentement sur chaque proposition.
+        </p>
+
+        <!-- Liste des actions -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Propositions et Consentement</h2>
+            
+            <!-- Nouvelle liste d'actions détaillées -->
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Réaliser un strip-tease lent et suggestif sur une musique choisie par l'utilisateur.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="1" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="1" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="1" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+            
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Se masturber explicitement devant la caméra avec ou sans jouet.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="2" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="2" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="2" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Utiliser des objets du quotidien (nourriture, accessoires) de manière suggestive ou sexuelle.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="3" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="3" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="3" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Dialogue explicite : raconter des fantasmes, des expériences, ou donner des instructions verbales.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="4" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="4" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="4" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Simulation de fellation sur un jouet ou un objet.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="5" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="5" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="5" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">S'embrasser et se caresser avec une autre personne devant la caméra.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="6" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="6" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="6" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Exhibitionnisme: se montrer nu(e) dans un lieu inattendu ou osé (tout en restant dans un cadre privé et consenti).</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="7" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="7" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="7" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+            
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Jeu de rôle verbal avec des scénarios de domination/soumission ou autre.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="8" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="8" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="8" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Se caresser les seins et la vulve/le pénis de manière explicite.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="9" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="9" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="9" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Se lécher ou sucer son propre doigt de manière suggestive.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="10" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="10" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="10" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Utilisation d'huiles de massage ou de lotions pour une caresse suggestive.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="11" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="11" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="11" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">L'utilisation d'une caméra à distance pour se concentrer sur des parties spécifiques du corps.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="12" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="12" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="12" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Jeu de rôle avec accessoires (foulard, menottes, cravate, etc.).</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="13" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="13" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="13" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Montrer et jouer avec une poitrine ou un fessier de manière explicite.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="14" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="14" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="14" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">S'allonger sur le dos et se caresser la partie intime de manière explicite.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="15" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="15" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="15" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Se masturber en se concentrant sur les pieds et les orteils.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="16" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="16" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="16" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Demander une pose spécifique, comme la pose du chien ou la pose de la chatte.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="17" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="17" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="17" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Utiliser des cubes de glace, de la crème fouettée ou des liquides sur le corps.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="18" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="18" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="18" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Simulation de relations sexuelles avec ou sans jouets.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="19" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="19" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="19" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Urination en direct.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="20" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="20" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="20" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Chantage sexuel consenti: demande d'argent pour accomplir des actions.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="21" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="21" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="21" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Squirting ou l'éjaculation féminine.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="22" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="22" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="22" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Jeu de rôle à la demande avec un scénario pré-écrit.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="23" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="23" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="23" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+
+            <div class="action-item p-4 mb-4 rounded border border-gray-700 flex flex-col md:flex-row md:items-center justify-between">
+                <span class="flex-1 text-sm">Écrire des phrases explicites sur son corps avec un marqueur.</span>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-green-700 hover:text-white" data-action-id="24" data-status="oui">Oui</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-red-700 hover:text-white" data-action-id="24" data-status="non">Non</button>
+                    <button class="action-button px-4 py-2 rounded-full border border-gray-500 text-secondary-light hover:bg-yellow-700 hover:text-white" data-action-id="24" data-status="pas_sur">Pas sûr</button>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('sidebar');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mainContent = document.querySelector('main');
+            const actionButtons = document.querySelectorAll('.action-button');
+
+            // Toggle sidebar for mobile
+            mobileMenuButton.addEventListener('click', () => {
+                sidebar.classList.remove('-translate-x-full');
+            });
+
+            closeMenuButton.addEventListener('click', () => {
+                sidebar.classList.add('-translate-x-full');
+            });
+
+            // Close menu if clicking outside
+            mainContent.addEventListener('click', (e) => {
+                if (!sidebar.classList.contains('-translate-x-full') && window.innerWidth < 768 && !sidebar.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                    sidebar.classList.add('-translate-x-full');
+                }
+            });
+
+            // Functionality for the action buttons
+            actionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const actionId = button.dataset.actionId;
+                    const status = button.dataset.status;
+
+                    // Deselect all buttons for this action
+                    const relatedButtons = document.querySelectorAll(`[data-action-id="${actionId}"]`);
+                    relatedButtons.forEach(btn => {
+                        btn.classList.remove('selected');
+                        btn.classList.remove('bg-green-700', 'bg-red-700', 'bg-yellow-700');
+                        btn.classList.add('text-secondary-light');
+                    });
+
+                    // Select the clicked button and apply color
+                    button.classList.add('selected');
+                    button.classList.remove('text-secondary-light');
+
+                    if (status === 'oui') {
+                        button.classList.add('bg-green-700');
+                    } else if (status === 'non') {
+                        button.classList.add('bg-red-700');
+                    } else {
+                        button.classList.add('bg-yellow-700');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

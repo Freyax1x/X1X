@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreyaTheGiant - Toutes les Catégories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Polices d'inspiration gothique : Cinzel Decorative pour les titres, Merriweather pour le corps de texte -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles de base - Palette Gothique */
+        body {
+            font-family: 'Merriweather', serif; /* Police élégante pour le corps du texte */
+            background-color: #1A1A1D; /* Charbon très foncé */
+            color: #E0E0E0; /* Gris clair pour le texte principal */
+            line-height: 1.6;
+            overflow-x: hidden; /* Empêche le défilement horizontal */
+        }
+        .bg-primary-dark { background-color: #0D0D0F; } /* Presque noir pour la barre latérale/en-têtes */
+        .text-secondary-light { color: #C0C0C0; } /* Gris argenté pour le texte secondaire */
+        .text-accent-gold { color: #FFD700; } /* Jaune or pour les accents */
+        .border-accent-gold { border-color: #FFD700; } /* Bordure or pour les accents */
+
+        /* Menu spécifique */
+        .nav-link.active {
+            color: #FFD700;
+            border-left: 4px solid #FFD700;
+            font-weight: bold;
+        }
+
+        /* Styles spécifiques pour le menu mobile */
+        #mobile-menu-button {
+            z-index: 60; /* S'assure que le bouton est au-dessus de tout */
+        }
+    </style>
+</head>
+
+<body class="flex flex-col md:flex-row min-h-screen">
+
+    <!-- Bouton pour le menu mobile, visible uniquement sur les petits écrans -->
+    <button id="mobile-menu-button" class="md:hidden p-4 fixed top-4 right-4 z-50 text-secondary-light">
+        <!-- Icône de menu SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4" />
+        </svg>
+    </button>
+
+    <!-- Barre latérale (Sidebar) - Le menu de navigation unifié -->
+    <aside id="sidebar" class="bg-primary-dark text-secondary-light w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out md:flex md:flex-col md:h-screen md:sticky md:top-0 md:z-auto z-50">
+        <div class="flex items-center justify-between px-4">
+            <a href="index.html" class="flex items-center space-x-2">
+                <!-- Titre du site, inspiré du style gothique -->
+                <span class="text-3xl font-bold font-['Cinzel_Decorative'] text-accent-gold">FreyaTheGiant</span>
+            </a>
+            <!-- Bouton de fermeture pour le menu mobile -->
+            <button id="close-menu-button" class="md:hidden text-secondary-light hover:text-white transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    
+        <nav id="main-nav">
+            <a href="index.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Accueil</a>
+            <a href="all-categories.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Toutes les catégories</a>
+            <a href="calendrier.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Calendrier</a>
+            <a href="tableau-de-bord.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Tableau de bord</a>
+            <a href="astuces-actions-et-prix.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Astuces, actions et prix</a>
+            <a href="communication.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Communication Efficace</a>
+            <a href="finance.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Planification Financière</a>
+            <a href="monetization.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Stratégie de Monétisation</a>
+            <a href="manager-role.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Rôle du Manager</a>
+            <a href="manager-benefits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Bénéfices pour le Manager</a>
+            <a href="limits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Nos Limites Absolues</a>
+        </nav>
+    </aside>
+
+    <!-- Contenu principal -->
+    <main class="flex-1 p-8 md:p-12 overflow-y-auto">
+        <h1 class="text-4xl md:text-5xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Toutes les Catégories</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Nouvelle Catégorie : Calendrier -->
+            <a href="calendrier.html" class="bg-primary-dark p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <h2 class="text-2xl font-['Cinzel_Decorative'] font-bold text-accent-gold mb-2">Calendrier</h2>
+                <p class="text-secondary-light">Organisez votre temps et vos tâches de manière visuelle et efficace.</p>
+            </a>
+            <!-- Nouvelle Catégorie : Tableau de bord -->
+            <a href="tableau-de-bord.html" class="bg-primary-dark p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <h2 class="text-2xl font-['Cinzel_Decorative'] font-bold text-accent-gold mb-2">Tableau de bord</h2>
+                <p class="text-secondary-light">Visualisez vos progrès et vos objectifs en un coup d'œil.</p>
+            </a>
+            <!-- Nouvelle Catégorie : Astuces, actions et prix -->
+            <a href="astuces-actions-et-prix.html" class="bg-primary-dark p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <h2 class="text-2xl font-['Cinzel_Decorative'] font-bold text-accent-gold mb-2">Astuces, actions et prix</h2>
+                <p class="text-secondary-light">Découvrez des stratégies et des récompenses pour rester motivé.</p>
+            </a>
+            <!-- Catégorie Communication -->
+            <a href="communication.html" class="bg-primary-dark p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <h2 class="text-2xl font-['Cinzel_Decorative'] font-bold text-accent-gold mb-2">Communication Efficace</h2>
+                <p class="text-secondary-light">Apprenez à communiquer clairement et à construire des relations solides, même avec le TDAH.</p>
+            </a>
+            <!-- Catégorie Finance -->
+            <a href="finance.html" class="bg-primary-dark p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <h2 class="text-2xl font-['Cinzel_Decorative'] font-bold text-accent-gold mb-2">Planification Financière</h2>
+                <p class="text-secondary-light">Des stratégies pratiques pour gérer vos finances, planifier votre budget et atteindre vos objectifs.</p>
+            </a>
+            <!-- Catégorie Monétisation -->
+            <a href="monetization.html" class="bg-primary-dark p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <h2 class="text-2xl font-['Cinzel_Decorative'] font-bold text-accent-gold mb-2">Stratégie de Monétisation</h2>
+                <p class="text-secondary-light">Transformez vos passions et vos compétences en sources de revenus stables, adaptées à votre mode de fonctionnement.</p>
+            </a>
+            <!-- Catégorie Rôle du Manager -->
+            <a href="manager-role.html" class="bg-primary-dark p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <h2 class="text-2xl font-['Cinzel_Decorative'] font-bold text-accent-gold mb-2">Rôle du Manager</h2>
+                <p class="text-secondary-light">Comprenez comment votre profil TDAH peut être un atout dans un rôle de leader et comment gérer une équipe avec succès.</p>
+            </a>
+            <!-- Catégorie Bénéfices pour le Manager -->
+            <a href="manager-benefits.html" class="bg-primary-dark p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <h2 class="text-2xl font-['Cinzel_Decorative'] font-bold text-accent-gold mb-2">Bénéfices pour le Manager</h2>
+                <p class="text-secondary-light">Découvrez les avantages uniques que les traits du TDAH peuvent apporter à votre entreprise et à votre équipe.</p>
+            </a>
+            <!-- Catégorie Limites -->
+            <a href="limits.html" class="bg-primary-dark p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <h2 class="text-2xl font-['Cinzel_Decorative'] font-bold text-accent-gold mb-2">Nos Limites Absolues</h2>
+                <p class="text-secondary-light">Clarifier les limites et les attentes pour garantir des relations saines et un environnement de travail productif.</p>
+            </a>
+        </div>
+    </main>
+
+    <!-- Scripts Javascript pour la fonctionnalité du menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const sidebar = document.getElementById('sidebar');
+            const closeMenuButton = document.getElementById('close-menu-button');
+
+            // Basculer la visibilité de la barre latérale sur mobile
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    sidebar.classList.remove('-translate-x-full');
+                    sidebar.classList.add('translate-x-0');
+                    sidebar.classList.add('block');
+                    sidebar.classList.add('absolute');
+                    sidebar.classList.add('h-full');
+                    sidebar.classList.add('z-50');
+                });
+            }
+            if (closeMenuButton) {
+                closeMenuButton.addEventListener('click', function() {
+                    sidebar.classList.remove('translate-x-0');
+                    sidebar.classList.add('-translate-x-full');
+                });
+            }
+            
+            // Fermer le menu lors d'un clic à l'extérieur
+            document.addEventListener('click', function(event) {
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnMenuButton = mobileMenuButton && mobileMenuButton.contains(event.target);
+                const isSidebarVisibleOnMobile = window.innerWidth < 768 && sidebar.classList.contains('translate-x-0');
+
+                if (isSidebarVisibleOnMobile && !isClickInsideSidebar && !isClickOnMenuButton) {
+                    sidebar.classList.remove('translate-x-0');
+                    sidebar.classList.add('-translate-x-full');
+                }
+            });
+
+            // Mettre en évidence le lien actif dans la barre latérale
+            const currentPath = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('#main-nav .nav-link');
+            navLinks.forEach(link => {
+                const linkPath = link.getAttribute('href');
+                if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

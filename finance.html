@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreyaTheGiant - Planification Financière</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles de base - Palette Gothique */
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #1A1A1D; /* Charbon très foncé */
+            color: #E0E0E0; /* Gris clair pour le texte principal */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .bg-primary-dark { background-color: #0D0D0F; }
+        .text-secondary-light { color: #C0C0C0; }
+        .text-accent-gold { color: #FFD700; }
+        .border-accent-gold { border-color: #FFD700; }
+        .hover-gold-text:hover { color: #FFD700; }
+
+        /* Menu spécifique */
+        .nav-link.active {
+            color: #FFD700;
+            border-left: 4px solid #FFD700;
+            font-weight: bold;
+        }
+
+        /* Styles spécifiques pour le menu mobile */
+        #mobile-menu-button {
+            z-index: 60;
+        }
+
+        /* Styles pour les sections de contenu */
+        .content-section {
+            background-color: #0D0D0F;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 2rem;
+        }
+
+        /* Styles pour le tableau */
+        .custom-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 1px solid #333;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        .custom-table th, .custom-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+        .custom-table th {
+            background-color: #1A1A1D;
+            color: #FFD700;
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 700;
+        }
+        .custom-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .custom-table tbody tr:nth-child(odd) {
+            background-color: #1A1A1D;
+        }
+        .custom-table tbody tr:nth-child(even) {
+            background-color: #262626;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col md:flex-row min-h-screen">
+
+    <!-- Bouton pour le menu mobile, visible uniquement sur les petits écrans -->
+    <button id="mobile-menu-button" class="md:hidden p-4 fixed top-4 right-4 z-50 text-secondary-light">
+        <!-- Icône de menu SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4" />
+        </svg>
+    </button>
+
+    <!-- Barre latérale (Sidebar) - Le menu de navigation unifié -->
+    <aside id="sidebar" class="bg-primary-dark text-secondary-light w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out md:flex md:flex-col md:h-screen md:sticky md:top-0 md:z-auto z-50">
+        <div class="flex items-center justify-between px-4">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-3xl font-bold font-['Cinzel_Decorative'] text-accent-gold">FreyaTheGiant</span>
+            </a>
+            <!-- Bouton de fermeture pour le menu mobile -->
+            <button id="close-menu-button" class="md:hidden text-secondary-light hover:text-white transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    
+        <nav id="main-nav">
+            <a href="index.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Accueil</a>
+            <a href="all-categories.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Toutes les catégories</a>
+            <a href="calendrier.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Calendrier</a>
+            <a href="tableau-de-bord.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Tableau de bord</a>
+            <a href="astuces-actions-et-prix.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Astuces, actions et prix</a>
+            <a href="communication.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Communication Efficace</a>
+            <a href="finance.html" class="nav-link active block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Planification Financière</a>
+            <a href="monetization.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Stratégie de Monétisation</a>
+            <a href="manager-role.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Rôle du Manager</a>
+            <a href="manager-benefits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Bénéfices pour le Manager</a>
+            <a href="limits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Nos Limites Absolutes</a>
+        </nav>
+    </aside>
+
+    <!-- Contenu principal -->
+    <main class="flex-1 p-8 md:p-12 overflow-y-auto">
+        <h1 class="text-4xl md:text-5xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Planification Financière</h1>
+        <p class="text-secondary-light mb-8">
+            Comprendre comment gérer vos revenus et optimiser vos prix est essentiel pour votre succès à long terme. Cette page vous guide à travers la tarification des tokens et les procédures de retrait sur différentes plateformes.
+        </p>
+
+        <!-- Section Tarification des Tokens -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">Stratégies de Tarification des Tokens par Plateforme</h2>
+            <p class="text-secondary-light mb-4">
+                La valeur des tokens varie d'une plateforme à l'autre. Une action qui vaut 100 tokens sur un site peut en valoir 50 sur un autre, ce qui impacte directement vos revenus. Il est crucial d'adapter vos prix pour chaque site afin de rester compétitif tout en maximisant vos gains.
+            </p>
+            <p class="text-secondary-light mb-6">
+                Voici un tableau indicatif des prix moyens des tokens sur différentes plateformes pour vous aider à établir une base de référence.
+            </p>
+
+            <table class="custom-table mb-8">
+                <thead>
+                    <tr>
+                        <th>Plateforme</th>
+                        <th>Valeur du token (USD)</th>
+                        <th>Prix suggéré pour une action simple</th>
+                        <th>Prix suggéré pour une action complexe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Site A</td>
+                        <td>$0.05</td>
+                        <td>40 tokens ($2)</td>
+                        <td>200 tokens ($10)</td>
+                    </tr>
+                    <tr>
+                        <td>Site B</td>
+                        <td>$0.02</td>
+                        <td>80 tokens ($1.6)</td>
+                        <td>400 tokens ($8)</td>
+                    </tr>
+                    <tr>
+                        <td>Site C</td>
+                        <td>$0.10</td>
+                        <td>20 tokens ($2)</td>
+                        <td>100 tokens ($10)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="text-secondary-light mb-4">
+                <strong>Conseil :</strong> Ces chiffres sont des exemples. Il est recommandé de commencer avec des prix légèrement inférieurs à la moyenne pour attirer de nouveaux clients, puis de les augmenter une fois que vous avez une base de fans solide. Analysez ce que font les autres créatrices sur la même plateforme pour affiner votre stratégie.
+            </p>
+        </div>
+
+        <!-- Section Gestion des Paiements -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">Gestion des Paiements et Retraits</h2>
+            <p class="text-secondary-light mb-4">
+                Le temps de virement et les minimums de retrait sont des facteurs importants à prendre en compte pour votre gestion de trésorerie.
+            </p>
+
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Plateforme</th>
+                        <th>Temps de virement moyen</th>
+                        <th>Minimum de retrait</th>
+                        <th>Méthodes de paiement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Site A</td>
+                        <td>3-5 jours ouvrables</td>
+                        <td>$50</td>
+                        <td>Virement bancaire, Crypto (USDT), Payoneer</td>
+                    </tr>
+                    <tr>
+                        <td>Site B</td>
+                        <td>5-7 jours ouvrables</td>
+                        <td>$100</td>
+                        <td>Virement bancaire, Payoneer</td>
+                    </tr>
+                    <tr>
+                        <td>Site C</td>
+                        <td>1-2 jours ouvrables</td>
+                        <td>$20</td>
+                        <td>Virement bancaire, PayPal, Crypto (Bitcoin)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="text-secondary-light mt-6">
+                <strong>Important :</strong> Avant de vous engager sur une plateforme, vérifiez toujours leurs conditions de retrait. Un minimum élevé peut vous forcer à attendre longtemps avant de pouvoir accéder à vos gains. Pensez également à la rapidité du virement, car elle peut affecter votre capacité à réinvestir dans votre activité (nouvel éclairage, tenues, etc.).
+            </p>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('sidebar');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mainContent = document.querySelector('main');
+
+            mobileMenuButton.addEventListener('click', () => {
+                sidebar.classList.remove('-translate-x-full');
+            });
+
+            closeMenuButton.addEventListener('click', () => {
+                sidebar.classList.add('-translate-x-full');
+            });
+
+            // Fermer le menu si on clique en dehors
+            mainContent.addEventListener('click', () => {
+                if (!sidebar.classList.contains('-translate-x-full') && window.innerWidth < 768) {
+                    sidebar.classList.add('-translate-x-full');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

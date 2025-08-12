@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreyaTheGiant - Tableau de bord</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Polices d'inspiration gothique : Cinzel Decorative pour les titres, Merriweather pour le corps de texte -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles de base - Palette Gothique */
+        body {
+            font-family: 'Merriweather', serif; /* Police élégante pour le corps du texte */
+            background-color: #1A1A1D; /* Charbon très foncé */
+            color: #E0E0E0; /* Gris clair pour le texte principal */
+            line-height: 1.6;
+            overflow-x: hidden; /* Empêche le défilement horizontal */
+        }
+        .bg-primary-dark { background-color: #0D0D0F; } /* Presque noir pour la barre latérale/en-têtes */
+        .text-secondary-light { color: #C0C0C0; } /* Gris argenté pour le texte secondaire */
+        .text-accent-gold { color: #FFD700; } /* Jaune or pour les accents */
+        .border-accent-gold { border-color: #FFD700; } /* Bordure or pour les accents */
+
+        /* Menu spécifique */
+        .nav-link.active {
+            color: #FFD700;
+            border-left: 4px solid #FFD700;
+            font-weight: bold;
+        }
+
+        /* Styles spécifiques pour le menu mobile */
+        #mobile-menu-button {
+            z-index: 60; /* S'assure que le bouton est au-dessus de tout */
+        }
+
+        /* Styles pour le générateur de recommandations */
+        .recommendation-output {
+            min-height: 120px;
+            background-color: #0D0D0F;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #333;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+
+<body class="flex flex-col md:flex-row min-h-screen">
+
+    <!-- Bouton pour le menu mobile, visible uniquement sur les petits écrans -->
+    <button id="mobile-menu-button" class="md:hidden p-4 fixed top-4 right-4 z-50 text-secondary-light">
+        <!-- Icône de menu SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4" />
+        </svg>
+    </button>
+
+    <!-- Barre latérale (Sidebar) - Le menu de navigation unifié -->
+    <aside id="sidebar" class="bg-primary-dark text-secondary-light w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out md:flex md:flex-col md:h-screen md:sticky md:top-0 md:z-auto z-50">
+        <div class="flex items-center justify-between px-4">
+            <a href="index.html" class="flex items-center space-x-2">
+                <!-- Titre du site, inspiré du style gothique -->
+                <span class="text-3xl font-bold font-['Cinzel_Decorative'] text-accent-gold">FreyaTheGiant</span>
+            </a>
+            <!-- Bouton de fermeture pour le menu mobile -->
+            <button id="close-menu-button" class="md:hidden text-secondary-light hover:text-white transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    
+        <nav id="main-nav">
+            <a href="index.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Accueil</a>
+            <a href="all-categories.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Toutes les catégories</a>
+            <a href="calendrier.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Calendrier</a>
+            <a href="tableau-de-bord.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Tableau de bord</a>
+            <a href="astuces-actions-et-prix.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Astuces, actions et prix</a>
+            <a href="communication.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Communication Efficace</a>
+            <a href="finance.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Planification Financière</a>
+            <a href="monetization.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Stratégie de Monétisation</a>
+            <a href="manager-role.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Rôle du Manager</a>
+            <a href="manager-benefits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Bénéfices pour le Manager</a>
+            <a href="limits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Nos Limites Absolues</a>
+        </nav>
+    </aside>
+
+    <!-- Contenu principal -->
+    <main class="flex-1 p-8 md:p-12 overflow-y-auto">
+        <h1 class="text-4xl md:text-5xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Tableau de bord</h1>
+        <p class="text-secondary-light mb-8">
+            Le tableau de bord centralise toutes les informations essentielles. Visualisez vos objectifs, suivez vos progrès et restez toujours au courant de ce qui se passe.
+        </p>
+
+        <!-- Conteneur pour les widgets du tableau de bord (interactif) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Progrès de la Semaine -->
+            <div class="bg-primary-dark p-6 rounded-lg shadow-lg">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-2xl font-['Cinzel_Decorative'] font-bold text-accent-gold">Progrès de la Semaine</h2>
+                    <button id="add-progress" class="bg-accent-gold text-primary-dark px-4 py-1 rounded-full text-sm font-bold hover:bg-opacity-80 transition-colors duration-200">+</button>
+                </div>
+                <p class="text-secondary-light mb-4">
+                    Votre résumé de la semaine en cours.
+                </p>
+                <ul id="progress-list" class="space-y-2">
+                    <!-- Les éléments de progression seront insérés ici par JavaScript -->
+                </ul>
+            </div>
+
+            <!-- Objectifs du Mois -->
+            <div class="bg-primary-dark p-6 rounded-lg shadow-lg">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-2xl font-['Cinzel_Decorative'] font-bold text-accent-gold">Objectifs du Mois</h2>
+                    <button id="add-goal" class="bg-accent-gold text-primary-dark px-4 py-1 rounded-full text-sm font-bold hover:bg-opacity-80 transition-colors duration-200">+</button>
+                </div>
+                <p class="text-secondary-light mb-4">
+                    Aperçu de vos objectifs à long terme.
+                </p>
+                <ul id="goals-list" class="space-y-2">
+                    <!-- Les objectifs seront insérés ici par JavaScript -->
+                </ul>
+            </div>
+
+            <!-- Tâches Importantes -->
+            <div class="bg-primary-dark p-6 rounded-lg shadow-lg">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-2xl font-['Cinzel_Decorative'] font-bold text-accent-gold">Tâches Importantes</h2>
+                    <button id="add-task" class="bg-accent-gold text-primary-dark px-4 py-1 rounded-full text-sm font-bold hover:bg-opacity-80 transition-colors duration-200">+</button>
+                </div>
+                <p class="text-secondary-light mb-4">
+                    Vos tâches les plus urgentes ou les plus importantes.
+                </p>
+                <ul id="tasks-list" class="space-y-2">
+                    <!-- Les tâches seront insérées ici par JavaScript -->
+                </ul>
+            </div>
+            
+            <!-- Générateur de Recommandations -->
+            <div class="bg-primary-dark p-6 rounded-lg shadow-lg col-span-1 md:col-span-2 lg:col-span-1">
+                <h2 class="text-2xl font-['Cinzel_Decorative'] font-bold text-accent-gold mb-2">Générateur de Recommandations</h2>
+                <p class="text-secondary-light mb-4">
+                    Obtenez un conseil personnalisé pour vous aider dans votre productivité, votre gestion ou vos finances.
+                </p>
+                <button id="generate-recommendation" class="w-full bg-accent-gold text-primary-dark px-4 py-2 rounded-full font-bold hover:bg-opacity-80 transition-colors duration-200 mb-4">
+                    Générer une recommandation
+                </button>
+                <div id="recommendation-output" class="recommendation-output text-secondary-light">
+                    <!-- La recommandation sera affichée ici -->
+                    Cliquez sur le bouton pour obtenir un conseil.
+                </div>
+            </div>
+
+            <!-- Suivi de l'avancement d'un projet -->
+            <div class="bg-primary-dark p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-['Cinzel_Decorative'] font-bold text-accent-gold mb-2">Suivi de l'avancement</h2>
+                <p class="text-secondary-light mb-4">
+                    Suivez le progrès d'un projet important.
+                </p>
+                <div class="mb-4">
+                    <label for="project-name" class="block text-secondary-light mb-2">Nom du projet</label>
+                    <input type="text" id="project-name" class="w-full bg-gray-800 text-white rounded-md px-4 py-2" placeholder="Ex: Lancer un nouveau service">
+                </div>
+                <div class="flex justify-between items-center mb-2">
+                    <label for="progress-slider" class="block text-secondary-light">Progression: <span id="progress-value">0%</span></label>
+                </div>
+                <input type="range" id="progress-slider" min="0" max="100" value="0" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer">
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Scripts Javascript pour la fonctionnalité du menu et de l'interactivité -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Logique pour le menu de navigation ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const sidebar = document.getElementById('sidebar');
+            const closeMenuButton = document.getElementById('close-menu-button');
+
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    sidebar.classList.remove('-translate-x-full');
+                    sidebar.classList.add('translate-x-0');
+                    sidebar.classList.add('block');
+                    sidebar.classList.add('absolute');
+                    sidebar.classList.add('h-full');
+                    sidebar.classList.add('z-50');
+                });
+            }
+            if (closeMenuButton) {
+                closeMenuButton.addEventListener('click', function() {
+                    sidebar.classList.remove('translate-x-0');
+                    sidebar.classList.add('-translate-x-full');
+                });
+            }
+            
+            document.addEventListener('click', function(event) {
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnMenuButton = mobileMenuButton && mobileMenuButton.contains(event.target);
+                const isSidebarVisibleOnMobile = window.innerWidth < 768 && sidebar.classList.contains('translate-x-0');
+
+                if (isSidebarVisibleOnMobile && !isClickInsideSidebar && !isClickOnMenuButton) {
+                    sidebar.classList.remove('translate-x-0');
+                    sidebar.classList.add('-translate-x-full');
+                }
+            });
+
+            const currentPath = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('#main-nav .nav-link');
+            navLinks.forEach(link => {
+                const linkPath = link.getAttribute('href');
+                if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            // --- Fin de la logique pour le menu de navigation ---
+
+
+            // --- Logique pour l'interactivité du tableau de bord ---
+            
+            // Sélection des éléments du DOM
+            const progressList = document.getElementById('progress-list');
+            const goalsList = document.getElementById('goals-list');
+            const tasksList = document.getElementById('tasks-list');
+            const recommendationOutput = document.getElementById('recommendation-output');
+            const generateButton = document.getElementById('generate-recommendation');
+            const progressSlider = document.getElementById('progress-slider');
+            const progressValue = document.getElementById('progress-value');
+            const projectNameInput = document.getElementById('project-name');
+
+            // Récupération des données depuis le stockage local ou utilisation de données par défaut
+            let progressData = JSON.parse(localStorage.getItem('progressData')) || [];
+            let goalsData = JSON.parse(localStorage.getItem('goalsData')) || [];
+            let tasksData = JSON.parse(localStorage.getItem('tasksData')) || [];
+            let projectData = JSON.parse(localStorage.getItem('projectData')) || { name: '', progress: 0 };
+            
+            // Initialisation des éléments de suivi
+            projectNameInput.value = projectData.name;
+            progressSlider.value = projectData.progress;
+            progressValue.textContent = `${projectData.progress}%`;
+
+
+            // Fonction pour sauvegarder les données dans le stockage local
+            function saveData(key, data) {
+                localStorage.setItem(key, JSON.stringify(data));
+            }
+            
+            // Événements pour le suivi de projet
+            projectNameInput.addEventListener('input', () => {
+                projectData.name = projectNameInput.value;
+                saveData('projectData', projectData);
+            });
+
+            progressSlider.addEventListener('input', () => {
+                progressValue.textContent = `${progressSlider.value}%`;
+                projectData.progress = progressSlider.value;
+                saveData('projectData', projectData);
+            });
+
+            // Fonction pour rendre les éléments de la liste
+            function renderList(listElement, data, key) {
+                listElement.innerHTML = '';
+                data.forEach((item, index) => {
+                    const li = document.createElement('li');
+                    li.classList.add('flex', 'justify-between', 'items-center', 'text-secondary-light', 'group');
+                    li.innerHTML = `
+                        <span>${item}</span>
+                        <div class="space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                            <button data-action="edit" data-index="${index}" class="text-accent-gold hover:text-white">&#9998;</button>
+                            <button data-action="delete" data-index="${index}" class="text-red-500 hover:text-red-300">&times;</button>
+                        </div>
+                    `;
+                    listElement.appendChild(li);
+                });
+                
+                // Ajout des écouteurs d'événements pour les boutons d'édition et de suppression
+                listElement.querySelectorAll('button[data-action="edit"]').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const index = e.target.dataset.index;
+                        const newValue = prompt('Modifiez l\'élément:', data[index]);
+                        if (newValue !== null && newValue.trim() !== '') {
+                            data[index] = newValue.trim();
+                            saveData(key, data);
+                            renderList(listElement, data, key);
+                        }
+                    });
+                });
+
+                listElement.querySelectorAll('button[data-action="delete"]').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const index = e.target.dataset.index;
+                        if (confirm('Voulez-vous vraiment supprimer cet élément ?')) {
+                            data.splice(index, 1);
+                            saveData(key, data);
+                            renderList(listElement, data, key);
+                        }
+                    });
+                });
+            }
+
+            // Rendre les listes au chargement de la page
+            renderList(progressList, progressData, 'progressData');
+            renderList(goalsList, goalsData, 'goalsData');
+            renderList(tasksList, tasksData, 'tasksData');
+
+            // Fonctionnalité d'ajout d'élément
+            document.getElementById('add-progress').addEventListener('click', () => {
+                const newItem = prompt('Ajoutez un nouveau progrès hebdomadaire:');
+                if (newItem !== null && newItem.trim() !== '') {
+                    progressData.push(newItem.trim());
+                    saveData('progressData', progressData);
+                    renderList(progressList, progressData, 'progressData');
+                }
+            });
+
+            document.getElementById('add-goal').addEventListener('click', () => {
+                const newItem = prompt('Ajoutez un nouvel objectif du mois:');
+                if (newItem !== null && newItem.trim() !== '') {
+                    goalsData.push(newItem.trim());
+                    saveData('goalsData', goalsData);
+                    renderList(goalsList, goalsData, 'goalsData');
+                }
+            });
+
+            document.getElementById('add-task').addEventListener('click', () => {
+                const newItem = prompt('Ajoutez une nouvelle tâche importante:');
+                if (newItem !== null && newItem.trim() !== '') {
+                    tasksData.push(newItem.trim());
+                    saveData('tasksData', tasksData);
+                    renderList(tasksList, tasksData, 'tasksData');
+                }
+            });
+
+            // Fonctionnalité du générateur de recommandations
+            generateButton.addEventListener('click', async () => {
+                recommendationOutput.innerHTML = '<p>Génération de la recommandation...</p>';
+                generateButton.disabled = true;
+
+                let chatHistory = [];
+                const prompt = "Générer une seule recommandation concise et actionable de 2 à 3 phrases pour un manager sur un sujet aléatoire entre la productivité, la communication, la planification financière ou la gestion d'équipe. La réponse doit être directe et ne pas contenir d'introduction ni de conclusion.";
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        recommendationOutput.innerHTML = `<p>${text}</p>`;
+                    } else {
+                        recommendationOutput.innerHTML = '<p class="text-red-500">Erreur : Impossible de générer la recommandation.</p>';
+                    }
+                } catch (error) {
+                    console.error('Erreur lors de l\'appel API :', error);
+                    recommendationOutput.innerHTML = '<p class="text-red-500">Erreur de connexion : Veuillez réessayer.</p>';
+                } finally {
+                    generateButton.disabled = false;
+                }
+            });
+            // --- Fin de la logique d'interactivité ---
+        });
+    </script>
+</body>
+</html>

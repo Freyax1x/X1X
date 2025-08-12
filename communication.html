@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreyaTheGiant - Communication Efficace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles de base - Palette Gothique */
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #1A1A1D; /* Charbon très foncé */
+            color: #E0E0E0; /* Gris clair pour le texte principal */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .bg-primary-dark { background-color: #0D0D0F; }
+        .text-secondary-light { color: #C0C0C0; }
+        .text-accent-gold { color: #FFD700; }
+        .border-accent-gold { border-color: #FFD700; }
+        .hover-gold-text:hover { color: #FFD700; }
+
+        /* Menu spécifique */
+        .nav-link.active {
+            color: #FFD700;
+            border-left: 4px solid #FFD700;
+            font-weight: bold;
+        }
+
+        /* Styles spécifiques pour le menu mobile */
+        #mobile-menu-button {
+            z-index: 60;
+        }
+
+        /* Styles pour les sections de contenu */
+        .content-section {
+            background-color: #0D0D0F;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 2rem;
+        }
+        
+        .list-disc-gold li::marker {
+            color: #FFD700;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col md:flex-row min-h-screen">
+
+    <!-- Bouton pour le menu mobile, visible uniquement sur les petits écrans -->
+    <button id="mobile-menu-button" class="md:hidden p-4 fixed top-4 right-4 z-50 text-secondary-light">
+        <!-- Icône de menu SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4" />
+        </svg>
+    </button>
+
+    <!-- Barre latérale (Sidebar) - Le menu de navigation unifié -->
+    <aside id="sidebar" class="bg-primary-dark text-secondary-light w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out md:flex md:flex-col md:h-screen md:sticky md:top-0 md:z-auto z-50">
+        <div class="flex items-center justify-between px-4">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-3xl font-bold font-['Cinzel_Decorative'] text-accent-gold">FreyaTheGiant</span>
+            </a>
+            <!-- Bouton de fermeture pour le menu mobile -->
+            <button id="close-menu-button" class="md:hidden text-secondary-light hover:text-white transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    
+        <nav id="main-nav">
+            <a href="index.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Accueil</a>
+            <a href="all-categories.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Toutes les catégories</a>
+            <a href="calendrier.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Calendrier</a>
+            <a href="tableau-de-bord.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Tableau de bord</a>
+            <a href="astuces-actions-et-prix.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Astuces, actions et prix</a>
+            <a href="communication.html" class="nav-link active block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Communication Efficace</a>
+            <a href="finance.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Planification Financière</a>
+            <a href="monetization.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Stratégie de Monétisation</a>
+            <a href="manager-role.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Rôle du Manager</a>
+            <a href="manager-benefits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Bénéfices pour le Manager</a>
+            <a href="limits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Nos Limites Absolutes</a>
+        </nav>
+    </aside>
+
+    <!-- Contenu principal -->
+    <main class="flex-1 p-8 md:p-12 overflow-y-auto">
+        <h1 class="text-4xl md:text-5xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Communication Efficace</h1>
+        <p class="text-secondary-light mb-8">
+            La communication est la clé d'une relation épanouissante, mais elle peut être complexe, surtout quand la neurodiversité est en jeu. En tant que personne atteinte de TDAH et d'autisme, il est essentiel de développer des outils et des stratégies de communication qui vous conviennent, à vous et à votre partenaire.
+        </p>
+
+        <!-- Section Comprendre les défis de la communication -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">Comprendre les défis</h2>
+            <p class="text-secondary-light mb-4">
+                Le TDAH et l'autisme influencent la manière dont vous traitez les informations, ce qui peut créer des malentendus.
+            </p>
+            <ul class="list-disc list-inside text-secondary-light space-y-2 list-disc-gold">
+                <li>Le TDAH peut rendre difficile la concentration pendant une conversation longue ou émotive, menant à des interruptions ou à des pertes de fil.</li>
+                <li>L'autisme peut affecter la compréhension des signaux sociaux non-verbaux (expressions faciales, ton de la voix) et la capacité à "lire entre les lignes".</li>
+            </ul>
+        </div>
+
+        <!-- Section Conseils pratiques pour nous deux -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">Conseils pratiques pour nous deux</h2>
+            <p class="text-secondary-light mb-4">
+                Ces stratégies peuvent vous aider à créer un espace de discussion plus sûr et plus efficace :
+            </p>
+            <ul class="list-disc list-inside text-secondary-light space-y-4 list-disc-gold">
+                <li>
+                    <strong>Soyons directs et clairs :</strong> Évitons les sous-entendus. Disons exactement ce que l'on pense et ce que l'on ressent. Au lieu de dire "Je suis fatiguée", disons "Je suis fatiguée et j'ai besoin de 20 minutes seule pour me reposer".
+                </li>
+                <li>
+                    <strong>Utilisons la communication écrite :</strong> Pour les sujets importants ou difficiles, il peut être plus facile d'utiliser des messages textes ou des notes. Cela permet de prendre le temps de formuler ses pensées sans pression.
+                </li>
+                <li>
+                    <strong>Planifions nos discussions :</strong> Parfois, une discussion imprévue peut être écrasante. Nous pouvons planifier des moments pour parler des sujets importants, ce qui nous donne le temps de nous préparer mentalement.
+                </li>
+                <li>
+                    <strong>Créons un "espace de pause" :</strong> Si une conversation devient trop intense ou difficile, il est important d'avoir un mot-clé ou un signal pour dire "stop". Par exemple, "pause". Cela signifie que l'on s'arrête, que l'on se donne du temps pour se calmer, et que l'on reprend plus tard.
+                </li>
+                <li>
+                    <strong>Écoutons pour comprendre, pas pour répondre :</strong> L'objectif n'est pas de gagner un débat, mais de se sentir compris. Nous pouvons résumer ce que l'autre a dit pour vérifier que nous avons bien compris. Par exemple : "Si je comprends bien, tu te sens..."
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section Conseils pour mon homme -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">Conseils pour mon homme</h2>
+            <p class="text-secondary-light mb-4">
+                Ces conseils peuvent t'aider à mieux me soutenir :
+            </p>
+            <ul class="list-disc list-inside text-secondary-light space-y-4 list-disc-gold">
+                <li>
+                    <strong>Sois patient :</strong> Il se peut que je prenne plus de temps pour traiter une information ou formuler ma réponse. Laisse-moi l'espace dont j'ai besoin.
+                </li>
+                <li>
+                    <strong>Ne le prends pas personnellement :</strong> Si j'ai du mal à te regarder dans les yeux ou si mon ton de voix te semble plat, ce n'est pas un manque d'affection. Ce sont des traits de mon fonctionnement neurologique.
+                </li>
+                <li>
+                    <strong>Pose des questions précises :</strong> Évite les questions ouvertes comme "À quoi penses-tu ?" qui peuvent être difficiles à traiter. Pose plutôt des questions directes comme "Est-ce que tu es en colère ?" ou "As-tu besoin que je te prenne dans mes bras ?"
+                </li>
+                <li>
+                    <strong>Valide mes émotions :</strong> Même si tu ne comprends pas pourquoi je ressens quelque chose, dis-moi que tu reconnais mon émotion. Un simple "Je vois que tu es contrariée" peut faire toute la différence.
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('sidebar');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mainContent = document.querySelector('main');
+
+            mobileMenuButton.addEventListener('click', () => {
+                sidebar.classList.remove('-translate-x-full');
+            });
+
+            closeMenuButton.addEventListener('click', () => {
+                sidebar.classList.add('-translate-x-full');
+            });
+
+            // Fermer le menu si on clique en dehors
+            mainContent.addEventListener('click', () => {
+                if (!sidebar.classList.contains('-translate-x-full') && window.innerWidth < 768) {
+                    sidebar.classList.add('-translate-x-full');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

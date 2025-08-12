@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreyaTheGiant - Astuces, actions et prix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles de base - Palette Gothique */
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #1A1A1D; /* Charbon très foncé */
+            color: #E0E0E0; /* Gris clair pour le texte principal */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .bg-primary-dark { background-color: #0D0D0F; }
+        .text-secondary-light { color: #C0C0C0; }
+        .text-accent-gold { color: #FFD700; }
+        .border-accent-gold { border-color: #FFD700; }
+        .hover-gold-text:hover { color: #FFD700; }
+
+        /* Menu spécifique */
+        .nav-link.active {
+            color: #FFD700;
+            border-left: 4px solid #FFD700;
+            font-weight: bold;
+        }
+
+        /* Styles spécifiques pour le menu mobile */
+        #mobile-menu-button {
+            z-index: 60;
+        }
+
+        /* Styles pour les sections de contenu */
+        .content-section {
+            background-color: #0D0D0F;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 2rem;
+        }
+
+        /* Style spécifique pour le bouton du générateur */
+        .generator-button {
+            background: linear-gradient(145deg, #FFD700, #C0A000);
+            color: #1A1A1D;
+            font-weight: bold;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px; /* Fully rounded */
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .generator-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px -1px rgba(0, 0, 0, 0.15), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="flex flex-col md:flex-row min-h-screen">
+
+    <!-- Bouton pour le menu mobile, visible uniquement sur les petits écrans -->
+    <button id="mobile-menu-button" class="md:hidden p-4 fixed top-4 right-4 z-50 text-secondary-light">
+        <!-- Icône de menu SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4" />
+        </svg>
+    </button>
+
+    <!-- Barre latérale (Sidebar) - Le menu de navigation unifié -->
+    <aside id="sidebar" class="bg-primary-dark text-secondary-light w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out md:flex md:flex-col md:h-screen md:sticky md:top-0 md:z-auto z-50">
+        <div class="flex items-center justify-between px-4">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-3xl font-bold font-['Cinzel_Decorative'] text-accent-gold">FreyaTheGiant</span>
+            </a>
+            <!-- Bouton de fermeture pour le menu mobile -->
+            <button id="close-menu-button" class="md:hidden text-secondary-light hover:text-white transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    
+        <nav id="main-nav">
+            <a href="index.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Accueil</a>
+            <a href="all-categories.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Toutes les catégories</a>
+            <a href="calendrier.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Calendrier</a>
+            <a href="tableau-de-bord.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Tableau de bord</a>
+            <a href="astuces-actions-et-prix.html" class="nav-link active block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Astuces, actions et prix</a>
+            <a href="communication.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Communication Efficace</a>
+            <a href="finance.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Planification Financière</a>
+            <a href="monetization.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Stratégie de Monétisation</a>
+            <a href="manager-role.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Rôle du Manager</a>
+            <a href="manager-benefits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Bénéfices pour le Manager</a>
+            <a href="limits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Nos Limites Absolues</a>
+        </nav>
+    </aside>
+
+    <!-- Contenu principal -->
+    <main class="flex-1 p-8 md:p-12 overflow-y-auto">
+        <h1 class="text-4xl md:text-5xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Astuces, actions et prix</h1>
+        <p class="text-secondary-light mb-8">
+            Bienvenue dans votre guide pratique pour optimiser vos stratégies. Vous trouverez ici des astuces pour améliorer vos performances, des actions concrètes à mettre en œuvre et une analyse des prix pour rester compétitif.
+        </p>
+
+        <!-- Nouvelle section Générateur aléatoire d'actions -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">Générateur aléatoire d'actions et de fétiches</h2>
+            <p class="text-secondary-light mb-8">
+                Appuyez sur le bouton pour découvrir une action ou un fétiche à proposer à votre audience pendant un live. C'est parfait pour pimenter une session ou trouver de nouvelles idées.
+            </p>
+            <div class="p-6 bg-gray-800 rounded-lg text-center max-w-xl mx-auto shadow-xl">
+                <h3 class="text-xl font-bold mb-4 text-accent-gold">Action du moment</h3>
+                <p id="action-display" class="text-xl md:text-2xl font-bold text-white mb-6 min-h-[3rem] flex items-center justify-center">
+                    Prête pour une nouvelle idée ?
+                </p>
+                <button id="generate-button" class="generator-button">
+                    Générer une action
+                </button>
+            </div>
+        </div>
+
+        <!-- Section Astuces -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">Astuces pour les sessions live</h2>
+            <p class="text-secondary-light mb-4">
+                Cette section regroupe des conseils et des techniques pour vous aider à maximiser l'engagement et les revenus de vos sessions en direct.
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-secondary-light">
+                <!-- Engagement et communauté -->
+                <li>
+                    <strong>Connexion personnelle :</strong> Créez une atmosphère de proximité en mémorisant les noms et les préférences de vos abonnés les plus fidèles. Mentionnez des détails personnels (si partagés) pour les faire se sentir uniques.
+                </li>
+                <li>
+                    <strong>Sujets de conversation :</strong> Préparez une liste de sujets de discussion pour les moments plus calmes, allant des films aux voyages, pour maintenir une conversation fluide.
+                </li>
+                <li>
+                    <strong>Rituels de session :</strong> Commencez et terminez chaque session avec un rituel spécial, comme une phrase d'accueil ou un geste particulier, pour créer une identité forte.
+                </li>
+                <li>
+                    <strong>Demandes personnalisées :</strong> Utilisez un système de points ou de jetons pour permettre aux spectateurs d'acheter des actions spécifiques (ex: un geste, un changement de tenue, une phrase).
+                </li>
+                <li>
+                    <strong>Messages de remerciement :</strong> Remerciez chaque personne qui envoie un pourboire ou s'abonne en prononçant son nom en direct.
+                </li>
+                <li>
+                    <strong>Annonce des objectifs :</strong> Mettez en avant un objectif de pourboires (ex: "atteignons 500 jetons pour un show de danse") pour encourager la participation.
+                </li>
+                <!-- Contenu et organisation -->
+                <li>
+                    <strong>Thèmes de session :</strong> Planifiez des soirées à thème (ex: "Soirée cosplay", "Tenue de soirée", "Lingerie rouge") pour maintenir l'intérêt et la nouveauté.
+                </li>
+                <li>
+                    <strong>Utilisation des accessoires :</strong> Variez les accessoires et les tenues pour éviter la monotonie et stimuler l'imagination.
+                </li>
+                <li>
+                    <strong>Bases de données de préférences :</strong> Créez un fichier simple pour noter les préférences de vos meilleurs clients afin de leur offrir un service encore plus personnalisé.
+                </li>
+                <li>
+                    <strong>Optimisation des titres :</strong> Rédigez des titres de session clairs, séduisants et qui décrivent précisément le thème de la soirée.
+                </li>
+                <!-- Gestion du temps et bien-être -->
+                <li>
+                    <strong>Pause structurée :</strong> Prenez de courtes pauses pour vous hydrater et vous ressourcer, en les annonçant à votre audience pour qu'ils sachent que vous revenez.
+                </li>
+                <li>
+                    <strong>Limites claires :</strong> Établissez et respectez vos limites personnelles. Informez poliment mais fermement les spectateurs qui les dépassent.
+                </li>
+                <li>
+                    <strong>Analyse post-session :</strong> Après chaque live, prenez 15 minutes pour évaluer ce qui a fonctionné, les pics d'audience et les sujets les plus populaires.
+                </li>
+                <li>
+                    <strong>Prise de notes :</strong> Notez les meilleures idées de votre public en direct pour les intégrer dans de futures sessions.
+                </li>
+                <li>
+                    <strong>Planification de contenu hors live :</strong> Préparez des publications sur les réseaux sociaux (TikTok, Instagram) pour annoncer vos sessions et engager votre communauté en dehors des lives.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section Actions -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">Actions concrètes à mettre en œuvre</h2>
+            <p class="text-secondary-light mb-4">
+                Ces actions sont des étapes concrètes et mesurables que vous pouvez entreprendre dès maintenant pour augmenter votre visibilité et vos revenus.
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-secondary-light">
+                <!-- Planification et production -->
+                <li>
+                    <strong>Créer un calendrier de contenu :</strong> Élaborez un programme hebdomadaire ou mensuel de vos sessions à thème pour que votre public sache à quoi s'attendre.
+                </li>
+                <li>
+                    <strong>Produire des vidéos courtes :</strong> Créez de courtes vidéos (15-30 secondes) pour les réseaux sociaux afin de teaser vos sessions ou de partager des moments marquants.
+                </li>
+                <li>
+                    <strong>Offrir des sessions privées :</strong> Créez une option de session privée pour vos abonnés premium, en fixant un tarif à la minute.
+                </li>
+                <li>
+                    <strong>Créer du contenu personnalisé :</strong> Proposez la création de photos ou vidéos personnalisées pour des clients qui paient un prix spécifique.
+                </li>
+                <li>
+                    <strong>Gérer un système de pourboires :</strong> Mettez en place un menu de pourboires avec des actions et des prix clairs (ex: "5 jetons pour une pose", "20 jetons pour un petit défi").
+                </li>
+                <!-- Marketing et promotion -->
+                <li>
+                    <strong>Optimiser les mots-clés :</strong> Utilisez des outils de recherche de mots-clés pour trouver les termes les plus recherchés dans votre niche et intégrez-les dans vos titres et descriptions.
+                </li>
+                <li>
+                    <strong>Partager sur des plateformes de découverte :</strong> Créez un compte sur des plateformes comme Reddit ou d'autres forums spécialisés pour diriger le trafic vers votre profil.
+                </li>
+                <li>
+                    <strong>Collaborer avec d'autres créatrices :</strong> Organisez des sessions en duo ou faites de la promotion croisée avec des créatrices qui partagent une audience similaire.
+                </li>
+                <li>
+                    <strong>Mettre en place une newsletter :</strong> Envoyez un email hebdomadaire à votre liste d'abonnés pour leur rappeler votre programme et leur donner des nouvelles.
+                </li>
+                <li>
+                    <strong>Lancer un programme d'affiliation :</strong> Offrez une commission à d'autres créateurs ou fans qui vous amènent de nouveaux abonnés.
+                </li>
+                <!-- Amélioration continue et monétisation -->
+                <li>
+                    <strong>Investir dans la qualité :</strong> Améliorez la qualité de votre éclairage, de votre son ou de votre caméra pour une expérience plus professionnelle.
+                </li>
+                <li>
+                    <strong>Créer des produits dérivés :</strong> Vendez des petits objets digitaux (ex: photos exclusives, fonds d'écran) ou des produits physiques si cela correspond à votre marque.
+                </li>
+                <li>
+                    <strong>Sonder votre public :</strong> Utilisez les sondages pour demander à votre public quels types de contenus ou de services ils aimeraient voir à l'avenir.
+                </li>
+                <li>
+                    <strong>Tenir un journal de bord :</strong> Tenez un registre de vos sessions, de vos revenus et des commentaires pour suivre votre progression et identifier les tendances.
+                </li>
+                <li>
+                    <strong>Mettre en place des modérateurs :</strong> Demandez à des membres de confiance de votre communauté de modérer votre chat pour maintenir une ambiance saine et positive.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section pour les actions spécifiques et leurs prix -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">Actions spécifiques et leurs prix</h2>
+            <p class="text-secondary-light mb-4">
+                Voici des exemples d'actions que vous pouvez proposer à vos spectateurs, avec des suggestions de prix en jetons. Adaptez les prix en fonction de votre notoriété et de l'intimité de l'action.
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-secondary-light">
+                <li><strong>Tirer la langue :</strong> 5 jetons</li>
+                <li><strong>Faire un clin d'œil séducteur :</strong> 10 jetons</li>
+                <li><strong>Mordre ses lèvres :</strong> 15 jetons</li>
+                <li><strong>Effleurer son corps du bout des doigts :</strong> 20 jetons</li>
+                <li><strong>Montrer son nombril :</strong> 25 jetons</li>
+                <li><strong>Caresser sa nuque :</strong> 30 jetons</li>
+                <li><strong>Poser avec un doigt sur la bouche :</strong> 35 jetons</li>
+                <li><strong>Enlever une épaule de sa robe :</strong> 40 jetons</li>
+                <li><strong>Montrer ses pieds :</strong> 45 jetons</li>
+                <li><strong>Baisser la bretelle de son soutien-gorge :</strong> 50 jetons</li>
+                <li><strong>Effleurer sa poitrine :</strong> 60 jetons</li>
+                <li><strong>Se pencher pour un décolleté plongeant :</strong> 75 jetons</li>
+                <li><strong>Félation avec un objet :</strong> 100 jetons</li>
+                <li><strong>Se déshabiller (action progressive) :</strong> 150 jetons</li>
+                <li><strong>Se caresser avec les mains :</strong> 200 jetons</li>
+                <li><strong>Mettre ses doigts dans la bouche :</strong> 250 jetons</li>
+                <li><strong>Faire un "show privé" (à la demande) :</strong> 300 jetons</li>
+                <li><strong>Faire un "strip-tease virtuel" :</strong> 400 jetons</li>
+                <li><strong>Utiliser un accessoire (ex: menottes) :</strong> 500 jetons</li>
+                <li><strong>S'allonger sur le lit :</strong> 600 jetons</li>
+                <li><strong>Se pencher vers la caméra :</strong> 700 jetons</li>
+                <li><strong>Faire un massage avec de l'huile :</strong> 800 jetons</li>
+            </ul>
+        </div>
+        
+        <!-- Section Prix -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">Analyse des prix et de la monétisation</h2>
+            <p class="text-secondary-light mb-4">
+                Examinez les stratégies de prix pour vous positionner de manière optimale sur le marché et maximiser vos revenus.
+            </p>
+            <div class="space-y-4 text-secondary-light">
+                <div>
+                    <h3 class="text-xl font-bold mb-2 text-accent-gold">1. Stratégie de Prix Compétitif</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>
+                            <strong>Définition :</strong> Alignez-vous ou fixez vos prix légèrement en dessous de ceux de vos concurrents directs pour attirer les clients.
+                        </li>
+                        <li>
+                            <strong>Objectif :</strong> Attirer une large audience, convertir rapidement de nouveaux abonnés et gagner des parts de marché.
+                        </li>
+                        <li>
+                            <strong>Exemples d'application :</strong>
+                            <ul>
+                                <li><strong>Abonnement de base :</strong> Proposez un abonnement mensuel à un prix standard pour l'accès aux sessions publiques.</li>
+                                <li><strong>Promotions de bienvenue :</strong> Offrez une réduction de 20% sur le premier mois d'abonnement ou des jetons bonus pour les nouveaux membres.</li>
+                                <li><strong>Prix d'appel :</strong> Vendez un petit pack de photos ou une courte vidéo à un prix très bas pour encourager les premières transactions.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2 text-accent-gold">2. Stratégie de Prix Premium</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>
+                            <strong>Définition :</strong> Fixez des prix plus élevés pour créer une perception d'exclusivité, de luxe et de qualité supérieure.
+                        </li>
+                        <li>
+                            <strong>Objectif :</strong> Ciblez une clientèle prête à payer pour une expérience haut de gamme et des avantages exclusifs.
+                        </li>
+                        <li>
+                            <strong>Exemples d'application :</strong>
+                            <ul>
+                                <li><strong>Sessions privées :</strong> Facturez un prix élevé à la minute pour des sessions individuelles.</li>
+                                <li><strong>Contenu personnalisé :</strong> Proposez des vidéos ou des photos créées sur mesure selon les demandes du client à un tarif significatif.</li>
+                                <li><strong>Abonnement VIP :</strong> Créez un abonnement haut de gamme qui inclut l'accès à un groupe privé, des contenus exclusifs et des interactions personnalisées.</li>
+                                <li><strong>Éditions limitées :</strong> Vendez des collections de photos ou des vidéos rares pour un prix fixe élevé.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2 text-accent-gold">3. Stratégie de Prix Économique</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>
+                            <strong>Définition :</strong> Proposez des prix très bas ou des options gratuites pour attirer le plus grand nombre de clients possible, en misant sur le volume des ventes.
+                        </li>
+                        <li>
+                            <strong>Objectif :</strong> Atteindre une audience de masse et générer des revenus grâce à un grand nombre de petites transactions et de pourboires.
+                        </li>
+                        <li>
+                            <strong>Exemples d'application :</strong>
+                            <ul>
+                                <li><strong>Pourboires :</strong> Ayez un menu d'actions à bas prix pour encourager les petits pourboires de la part d'un maximum de personnes.</li>
+                                <li><strong>Modèle "Freemium" :</strong> Offrez l'accès gratuit à vos sessions publiques mais faites payer pour les pourboires, les demandes ou les sessions privées.</li>
+                                <li><strong>Récompenses de fidélité :</strong> Offrez des bonus de jetons ou des avantages minimes à vos abonnés réguliers à bas prix.</li>
+                                <li><strong>Vente de petits contenus digitaux :</strong> Vendez des photos ou des packs à des prix très abordables pour un large public.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts Javascript pour la fonctionnalité du menu et du générateur d'actions -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Logique pour le menu de navigation ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const sidebar = document.getElementById('sidebar');
+            const closeMenuButton = document.getElementById('close-menu-button');
+
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    sidebar.classList.remove('-translate-x-full');
+                    sidebar.classList.add('translate-x-0');
+                    sidebar.classList.add('block');
+                    sidebar.classList.add('absolute');
+                    sidebar.classList.add('h-full');
+                    sidebar.classList.add('z-50');
+                });
+            }
+            if (closeMenuButton) {
+                closeMenuButton.addEventListener('click', function() {
+                    sidebar.classList.remove('translate-x-0');
+                    sidebar.classList.add('-translate-x-full');
+                });
+            }
+
+            document.addEventListener('click', function(event) {
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnMenuButton = mobileMenuButton && mobileMenuButton.contains(event.target);
+                const isSidebarVisibleOnMobile = window.innerWidth < 768 && sidebar.classList.contains('translate-x-0');
+
+                if (isSidebarVisibleOnMobile && !isClickInsideSidebar && !isClickOnMenuButton) {
+                    sidebar.classList.remove('translate-x-0');
+                    sidebar.classList.add('-translate-x-full');
+                }
+            });
+
+            const currentPath = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('#main-nav .nav-link');
+            navLinks.forEach(link => {
+                const linkPath = link.getAttribute('href');
+                if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            // --- Fin de la logique pour le menu de navigation ---
+
+            // --- Logique pour le générateur d'actions aléatoires ---
+            const generateButton = document.getElementById('generate-button');
+            const actionDisplay = document.getElementById('action-display');
+
+            // Liste de plus de 150 actions avec des suggestions de prix en jetons
+            const actions = [
+                // Actions sensuelles/coquines de base
+                "Tirer la langue (5 jetons)",
+                "Faire un clin d'œil séducteur (10 jetons)",
+                "Mordre ses lèvres (15 jetons)",
+                "Effleurer son corps du bout des doigts (20 jetons)",
+                "Montrer son nombril (25 jetons)",
+                "Caresser sa nuque (30 jetons)",
+                "Poser avec un doigt sur la bouche (35 jetons)",
+                "Enlever une épaule de sa robe (40 jetons)",
+                "Montrer ses pieds (45 jetons)",
+                "Baisser la bretelle de son soutien-gorge (50 jetons)",
+                "Effleurer sa poitrine (60 jetons)",
+                "Se pencher pour un décolleté plongeant (75 jetons)",
+                "Félation avec un objet (100 jetons)",
+                "Se déshabiller (action progressive) (150 jetons)",
+                "Se caresser avec les mains (200 jetons)",
+                "Mettre ses doigts dans la bouche (250 jetons)",
+                "Faire un 'show privé' (à la demande) (300 jetons)",
+                "Faire un 'strip-tease virtuel' (400 jetons)",
+                "Utiliser un accessoire (ex: menottes) (500 jetons)",
+                "S'allonger sur le lit (600 jetons)",
+                "Se pencher vers la caméra (700 jetons)",
+                "Faire un massage avec de l'huile (800 jetons)",
+                "Souffler un baiser à la caméra (10 jetons)",
+                "Sourire de manière suggestive (15 jetons)",
+                "Passer lentement la main dans les cheveux (20 jetons)",
+                "Se mordre le poignet (25 jetons)",
+                "Caresser son cou (30 jetons)",
+                "Se caresser la cuisse (40 jetons)",
+                "Défaire un bouton de sa chemise (45 jetons)",
+                "Montrer ses mollets et ses chevilles (50 jetons)",
+                "Glisser sa main sous sa culotte (60 jetons)",
+                "Simulation de masturbation sur un coussin (70 jetons)",
+                "Se caresser doucement le sexe (80 jetons)",
+                "Se lécher le poignet (90 jetons)",
+                "Faire un gémissement doux (100 jetons)",
+                "Faire un clin d'œil en se léchant les lèvres (20 jetons)",
+                "Se mettre à genoux (30 jetons)",
+                "Montrer l'intérieur de sa cuisse (40 jetons)",
+                "Faire un son suggestif (50 jetons)",
+                "Caresser ses fesses (60 jetons)",
+                "Mettre ses pieds sur la table (70 jetons)",
+                "Se caresser le ventre (80 jetons)",
+                "Mordre son doigt (15 jetons)",
+                "Cligner de l'œil lentement (10 jetons)",
+                "Caresser un vêtement (20 jetons)",
+                "Enlever un bijou lentement (50 jetons)",
+                "Montrer son dos (40 jetons)",
+                "Se mordre la lèvre inférieure (15 jetons)",
+                "Jouer avec sa respiration (25 jetons)",
+                "Faire un petit cri de plaisir (70 jetons)",
+                "Se faire une tresse ou défaire ses cheveux (35 jetons)",
+                "Caresser son propre visage (20 jetons)",
+                "Se mettre à quatre pattes (150 jetons)",
+                "Faire un 'show de danse' (200 jetons)",
+                "Utiliser une brosse à cheveux comme micro (20 jetons)",
+                "Faire un regard intense et se mordre la lèvre (30 jetons)",
+                "Passer sa main sur sa poitrine (60 jetons)",
+                "Montrer l'intérieur de sa bouche (40 jetons)",
+                "Jouer avec une glace (150 jetons)",
+                "Se passer de la crème sur les jambes (180 jetons)",
+                "Faire des bulles avec du chewing-gum (20 jetons)",
+                "Se déshabiller lentement (progressivement, 150 jetons)",
+                "Caresser une plume sur son corps (120 jetons)",
+                "Mettre sa main dans son short (90 jetons)",
+                "Simulation d'un coup de foudre avec un jouet (200 jetons)",
+                "Mettre une sucette dans la bouche (30 jetons)",
+                "Faire un massage des pieds à la caméra (60 jetons)",
+                "Respirer profondément et bruyamment (25 jetons)",
+                "Claquement de langue (10 jetons)",
+                "Faire un geste de main suggestif (35 jetons)",
+                "Simuler une douche (180 jetons)",
+                "S'allonger sur le sol (200 jetons)",
+                "Caresser un chat ou un animal de compagnie (40 jetons)",
+                "Se caresser avec de la mousse à raser (190 jetons)",
+                "Faire un show sous la douche (250 jetons)",
+                "Se mettre à l'envers (75 jetons)",
+                "Se mordre le cou (100 jetons)",
+                "Faire un gémissement (70 jetons)",
+                "Faire semblant de jouir (250 jetons)",
+                "Faire un 'lap dance' virtuel (300 jetons)",
+                "Faire un 'teasing' avec un jouet (150 jetons)",
+                "Jouer avec un ruban (50 jetons)",
+                "Jeu de jambes (60 jetons)",
+                "Se toucher le corps entier (200 jetons)",
+                "Faire des bruits de bouche (10 jetons)",
+                "Faire le 'duck face' (10 jetons)",
+                "Faire une 'petite danse' (40 jetons)",
+                "Enlever sa culotte lentement (100 jetons)",
+                "Enlever son soutien-gorge lentement (120 jetons)",
+                "Montrer ses doigts de pieds un par un (30 jetons)",
+                "Se caresser la poitrine sous le vêtement (80 jetons)",
+                "Toucher son entrejambe par-dessus le vêtement (100 jetons)",
+                "Faire une pose de yoga suggestive (80 jetons)",
+                "Boire dans un verre de manière suggestive (25 jetons)",
+                "Manger une cerise de manière suggestive (30 jetons)",
+                "Passer un glaçon sur son corps (200 jetons)",
+                "Se caresser le clitoris à travers le vêtement (150 jetons)",
+                "Faire une 'private room' avec un client (300 jetons)",
+                "Faire une 'vidéo personnalisée' (prix à négocier)",
+                "Faire un 'strip poker' (200 jetons)",
+                "Jouer avec ses cheveux (20 jetons)",
+                "Faire un sourire en coin (10 jetons)",
+                "Faire un clin d'œil avec les deux yeux (5 jetons)",
+                "Mordre son ongle (10 jetons)",
+                "Faire semblant d'être effrayée (20 jetons)",
+                "Rire de manière suggestive (15 jetons)",
+                "Faire des 'bisous' à la caméra (5 jetons)",
+                "Tirer sa langue sur le côté (10 jetons)",
+                "Passer sa langue sur ses dents (20 jetons)",
+
+                // Actions plus extrêmes et fétichismes
+                "Jeu de rôle 'domination légère' (menottes) (180 jetons)",
+                "Jeu de rôle 'soumission' (laisser un spectateur donner des ordres) (150 jetons)",
+                "Simuler une fessée sur soi-même avec la main (120 jetons)",
+                "Jeu de rôle 'professeure et élève' (180 jetons)",
+                "Fétichisme des collants : porter et déchirer les collants (150 jetons)",
+                "Fétichisme des chaussures : porter des talons très hauts et marcher (90 jetons)",
+                "Fétichisme des pieds : lécher lentement le bout des orteils (150 jetons)",
+                "Jeu de cire : faire tomber de la cire de bougie froide sur son corps (200 jetons)",
+                "Jeu de 'pain play' simulé : pincer ses tétons ou ses lèvres (150 jetons)",
+                "Jeu de 'bondage' : s'attacher les poignets avec une corde ou une écharpe (180 jetons)",
+                "Fétichisme du cuir : porter des vêtements en cuir et les caresser (100 jetons)",
+                "Fétichisme des masques : porter un masque de loup ou de chat (120 jetons)",
+                "Jouer avec un fouet ou une cravache (domination) (220 jetons)",
+                "Simulation de 'spitting' (cracher) sur la caméra (150 jetons)",
+                "Simulation de 'watersports' : se verser de l'eau sur le corps (250 jetons)",
+                "Se couvrir le corps de miel ou de chocolat (300 jetons)",
+                "Jeu de rôle 'esclave' : se comporter comme un esclave du spectateur (200 jetons)",
+                "Jeu de rôle 'vampire et victime' : se mordre le cou de manière suggestive (180 jetons)",
+                "Jeu de rôle 'policière et prisonnière' (200 jetons)",
+                "S'humilier verbalement sur demande (150 jetons)",
+                "Utiliser des pinces à linge sur les tétons (jeu de douleur) (250 jetons)",
+                "Se mettre à genoux, les mains attachées derrière le dos (bondage) (220 jetons)",
+                "Jeu de rôle 'maîtresse et chiot' (250 jetons)",
+                "Se mettre un objet dans la bouche et le garder (jeu oral) (100 jetons)",
+                "Jeu de 'control' : laisser le spectateur contrôler la musique ou l'éclairage (75 jetons)",
+                "Faire semblant de jouir avec les mains attachées (300 jetons)",
+                "Se bander les yeux et décrire ses sensations (150 jetons)",
+                "Se frotter les seins avec de l'huile (180 jetons)",
+                "Caresser ses fesses avec une plume ou une brosse douce (120 jetons)",
+                "Faire un strip-tease avec des gants (120 jetons)",
+                "Faire une pose suggestive sur une chaise (80 jetons)",
+                "Se mettre sur le ventre, les fesses en l'air (200 jetons)",
+                "Jeu de rôle 'détective et suspecte' (150 jetons)",
+                "Faire un 'show' de 'roleplay' vocal (150 jetons)",
+                "Jeu de chat et souris avec la caméra (75 jetons)",
+                "Simuler d'être une statue de cire (50 jetons)",
+                "Faire un 'show' de 'footjob' virtuel (200 jetons)",
+                "Jeu de rôle 'serveuse et client' (120 jetons)",
+                "Faire un 'show' de 'panties' (150 jetons)",
+                "Jeu de rôle 'nurse et patient' (180 jetons)",
+                "Jeu de rôle 'cheerleader et coach' (150 jetons)",
+                "Se masturber avec un objet (300 jetons)",
+                "Faire un show avec un godemiché (500 jetons)",
+                "Se mettre un doigt dans l'anus (400 jetons)",
+                "Faire semblant de manger ses règles (400 jetons)",
+                "Faire une fellation sur un objet (350 jetons)",
+                "Faire un 'show' de 'rimming' virtuel (450 jetons)",
+                "Se verser de la crème sur le corps et la manger (350 jetons)",
+                "Faire un 'show' de 'golden shower' virtuel (400 jetons)",
+                "Faire semblant de vomir sur un objet (300 jetons)",
+                "Faire un 'show' de 'fetish' spécifique (prix à négocier)",
+            ];
+            
+            generateButton.addEventListener('click', function() {
+                // Sélectionne une action aléatoire dans le tableau
+                const randomIndex = Math.floor(Math.random() * actions.length);
+                actionDisplay.textContent = actions[randomIndex];
+            });
+            // --- Fin de la logique pour le générateur d'actions aléatoires ---
+        });
+    </script>
+</body>
+</html>

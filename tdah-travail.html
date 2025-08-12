@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreyaTheGiant - TDAH et vie professionnelle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles de base - Palette Gothique */
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #1A1A1D; /* Charbon très foncé */
+            color: #E0E0E0; /* Gris clair pour le texte principal */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .bg-primary-dark { background-color: #0D0D0F; }
+        .text-secondary-light { color: #C0C0C0; }
+        .text-accent-gold { color: #FFD700; }
+        .border-accent-gold { border-color: #FFD700; }
+        .hover-gold-text:hover { color: #FFD700; }
+
+        /* Menu spécifique */
+        .nav-link.active {
+            color: #FFD700;
+            border-left: 4px solid #FFD700;
+            font-weight: bold;
+        }
+        .nav-link:hover {
+            background-color: rgba(255, 215, 0, 0.1);
+        }
+        
+        /* Styles spécifiques pour le menu mobile */
+        #mobile-menu-button {
+            z-index: 60;
+        }
+
+        .content-section {
+            background-color: #0D0D0F;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 2rem;
+        }
+
+        .list-disc-gold li::marker {
+            color: #FFD700;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col md:flex-row min-h-screen">
+
+    <!-- Bouton pour le menu mobile, visible uniquement sur les petits écrans -->
+    <button id="mobile-menu-button" class="md:hidden p-4 fixed top-4 right-4 z-50 text-secondary-light">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4" />
+        </svg>
+    </button>
+
+    <!-- Barre latérale (Sidebar) - Le menu de navigation unifié avec défilement -->
+    <aside id="sidebar" class="bg-primary-dark text-secondary-light w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out md:flex md:flex-col md:h-screen md:sticky md:top-0 md:z-auto overflow-y-auto z-50">
+        <div class="flex items-center justify-between px-4">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-3xl font-bold font-['Cinzel_Decorative'] text-accent-gold">FreyaTheGiant</span>
+            </a>
+            <button id="close-menu-button" class="md:hidden text-secondary-light hover:text-white transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    
+        <nav id="main-nav">
+            <!-- Mise à jour de la classe active pour le TDAH et la vie professionnelle -->
+            <a href="index.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Accueil</a>
+            <a href="all-categories.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Toutes les catégories</a>
+            <a href="calendrier.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Calendrier</a>
+            <a href="tableau-de-bord.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Tableau de bord</a>
+            <a href="astuces-actions-et-prix.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Astuces, actions et prix</a>
+            <a href="communication.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Communication Efficace</a>
+            <a href="finance.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Planification Financière</a>
+            <a href="monetization.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Stratégie de Monétisation</a>
+            <a href="manager-role.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Rôle du Manager</a>
+            <a href="manager-benefits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Bénéfices pour le Manager</a>
+            <a href="limits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Nos Limites Absolues</a>
+            <a href="actions-et-etat.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Actions et État</a>
+            <a href="erotic-actions-et-consentement.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Actions Érotiques et Consentement</a>
+            <a href="promotion.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Promotion</a>
+            <a href="soutien-tdah.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Soutien TDAH</a>
+            <a href="gestion-persona.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Gérer son personnage en ligne</a>
+            <a href="support-emmotionel.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Support émotionnel pour mon homme</a>
+            <a href="tdah-travail.html" class="nav-link active block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">TDAH et vie professionnelle</a>
+        </nav>
+    </aside>
+
+    <!-- Contenu principal -->
+    <main class="flex-1 p-8 md:p-12 overflow-y-auto">
+        <h1 class="text-4xl md:text-5xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">TDAH et vie professionnelle</h1>
+        <p class="text-secondary-light mb-8 text-sm">
+            Découvrez comment transformer les défis liés au TDAH en atouts et mettez en place des stratégies efficaces pour vous épanouir au travail.
+        </p>
+
+        <!-- Les défis courants -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Les défis courants liés au TDAH en milieu professionnel</h2>
+            <p class="text-secondary-light mb-4">
+                Ces difficultés proviennent d'un fonctionnement neurologique différent, qui affecte les fonctions exécutives du cerveau.
+            </p>
+            <ul class="list-disc list-disc-gold pl-6">
+                <li class="mb-2">**Gestion du temps et procrastination** : Difficulté à estimer le temps nécessaire et à se lancer dans les tâches non stimulantes.</li>
+                <li class="mb-2">**Difficultés d'organisation** : Hiérarchiser les tâches et maintenir un espace de travail ordonné peut être un défi.</li>
+                <li class="mb-2">**Déficit de concentration** : Facilement distrait par les bruits, les conversations ou même ses propres pensées.</li>
+                <li class="mb-2">**Dérégulation émotionnelle** : Tendance à avoir des réactions émotionnelles plus intenses aux critiques ou à l'échec.</li>
+            </ul>
+        </div>
+        
+        <!-- Les forces insoupçonnées -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Les forces insoupçonnées du TDAH</h2>
+            <p class="text-secondary-light mb-4">
+                Bien géré, le TDAH est un super-pouvoir. Les caractéristiques qui posent des défis peuvent aussi être de puissants atouts.
+            </p>
+            <ul class="list-disc list-disc-gold pl-6">
+                <li class="mb-2">**Hyperfocus** : Capacité à se plonger dans une tâche passionnante, au point d'oublier tout le reste, pour atteindre un niveau de productivité et de qualité exceptionnel.</li>
+                <li class="mb-2">**Créativité et pensée divergente** : Les esprits TDAH peuvent connecter des idées apparemment sans rapport pour trouver des solutions innovantes.</li>
+                <li class="mb-2">**Énergie et résilience** : L'hyperactivité peut se transformer en une grande énergie pour les projets stimulants.</li>
+                <li class="mb-2">**Capacité à penser vite** : Une grande capacité à traiter rapidement les informations et à réagir de manière créative face aux problèmes.</li>
+            </ul>
+        </div>
+
+        <!-- Stratégies pratiques -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Stratégies pratiques pour s'épanouir au travail</h2>
+            <p class="text-secondary-light mb-4">
+                Pour tirer parti de vos forces et atténuer vos défis, mettez en place ces systèmes et routines.
+            </p>
+            <ul class="list-disc list-disc-gold pl-6">
+                <li class="mb-2">**Utilisez des outils d'organisation externes** : Calendriers, listes de tâches, applications de rappels.</li>
+                <li class="mb-2">**Structurez votre journée** : Utilisez la **technique Pomodoro** pour diviser le travail en sessions gérables.</li>
+                <li class="mb-2">**Aménagez votre environnement** : Réduisez les distractions au minimum.</li>
+                <li class="mb-2">**Soyez transparent** : Si vous êtes à l'aise, parlez à votre manager de vos besoins pour un meilleur soutien.</li>
+                <li class="mb-2">**Divisez les tâches complexes** : Les projets de grande envergure peuvent être gérés en les découpant en petites étapes.</li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('sidebar');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mainContent = document.querySelector('main');
+
+            // Toggle sidebar for mobile
+            mobileMenuButton.addEventListener('click', () => {
+                sidebar.classList.remove('-translate-x-full');
+            });
+
+            closeMenuButton.addEventListener('click', () => {
+                sidebar.classList.add('-translate-x-full');
+            });
+
+            // Close menu if clicking outside
+            mainContent.addEventListener('click', (e) => {
+                if (!sidebar.classList.contains('-translate-x-full') && window.innerWidth < 768 && !sidebar.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                    sidebar.classList.add('-translate-x-full');
+                }
+            });
+
+            // Gérer la classe 'active' pour les liens de navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            const currentPath = window.location.pathname.split('/').pop();
+            navLinks.forEach(link => {
+                const linkPath = link.href.split('/').pop();
+                if (linkPath === currentPath) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

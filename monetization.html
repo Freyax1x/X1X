@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreyaTheGiant - Stratégie de Monétisation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles de base - Palette Gothique */
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #1A1A1D; /* Charbon très foncé */
+            color: #E0E0E0; /* Gris clair pour le texte principal */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .bg-primary-dark { background-color: #0D0D0F; }
+        .text-secondary-light { color: #C0C0C0; }
+        .text-accent-gold { color: #FFD700; }
+        .border-accent-gold { border-color: #FFD700; }
+        .hover-gold-text:hover { color: #FFD700; }
+
+        /* Menu spécifique */
+        .nav-link.active {
+            color: #FFD700;
+            border-left: 4px solid #FFD700;
+            font-weight: bold;
+        }
+
+        /* Styles spécifiques pour le menu mobile */
+        #mobile-menu-button {
+            z-index: 60;
+        }
+
+        /* Styles pour les sections de contenu */
+        .content-section {
+            background-color: #0D0D0F;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 2rem;
+        }
+        
+        .list-disc-gold li::marker {
+            color: #FFD700;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col md:flex-row min-h-screen">
+
+    <!-- Bouton pour le menu mobile, visible uniquement sur les petits écrans -->
+    <button id="mobile-menu-button" class="md:hidden p-4 fixed top-4 right-4 z-50 text-secondary-light">
+        <!-- Icône de menu SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4" />
+        </svg>
+    </button>
+
+    <!-- Barre latérale (Sidebar) - Le menu de navigation unifié -->
+    <aside id="sidebar" class="bg-primary-dark text-secondary-light w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out md:flex md:flex-col md:h-screen md:sticky md:top-0 md:z-auto z-50">
+        <div class="flex items-center justify-between px-4">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-3xl font-bold font-['Cinzel_Decorative'] text-accent-gold">FreyaTheGiant</span>
+            </a>
+            <!-- Bouton de fermeture pour le menu mobile -->
+            <button id="close-menu-button" class="md:hidden text-secondary-light hover:text-white transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    
+        <nav id="main-nav">
+            <a href="index.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Accueil</a>
+            <a href="all-categories.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Toutes les catégories</a>
+            <a href="calendrier.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Calendrier</a>
+            <a href="tableau-de-bord.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Tableau de bord</a>
+            <a href="astuces-actions-et-prix.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Astuces, actions et prix</a>
+            <a href="communication.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Communication Efficace</a>
+            <a href="finance.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Planification Financière</a>
+            <a href="monetization.html" class="nav-link active block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Stratégie de Monétisation</a>
+            <a href="manager-role.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Rôle du Manager</a>
+            <a href="manager-benefits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Bénéfices pour le Manager</a>
+            <a href="limits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Nos Limites Absolutes</a>
+        </nav>
+    </aside>
+
+    <!-- Contenu principal -->
+    <main class="flex-1 p-8 md:p-12 overflow-y-auto">
+        <h1 class="text-4xl md:text-5xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Stratégie de Monétisation</h1>
+        <p class="text-secondary-light mb-8">
+            Pour réussir dans notre projet, il est essentiel de mettre en place une stratégie de monétisation claire et efficace. Cette page décrit les différentes méthodes que nous pouvons explorer pour générer des revenus, en se basant sur nos forces et nos objectifs.
+        </p>
+
+        <!-- Section Principes fondamentaux -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">Principes fondamentaux</h2>
+            <p class="text-secondary-light mb-4">
+                Avant de choisir une méthode, il est important de garder ces principes en tête :
+            </p>
+            <ul class="list-disc list-inside text-secondary-light space-y-2 list-disc-gold">
+                <li><strong>Valeur ajoutée :</strong> Chaque source de revenu doit apporter de la valeur aux utilisateurs.</li>
+                <li><strong>Diversification :</strong> Ne pas mettre tous nos œufs dans le même panier. Il est prudent d'explorer plusieurs options.</li>
+                <li><strong>Durabilité :</strong> Choisir des modèles qui sont viables à long terme et qui peuvent évoluer avec notre projet.</li>
+            </ul>
+        </div>
+
+        <!-- Section Les modèles de monétisation à explorer -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">Les modèles de monétisation à explorer</h2>
+            <p class="text-secondary-light mb-4">
+                Voici quelques pistes de réflexion pour générer des revenus :
+            </p>
+            <ul class="list-disc list-inside text-secondary-light space-y-4 list-disc-gold">
+                <li>
+                    <strong>Affiliation :</strong> Nous pourrions recommander des produits ou services qui nous plaisent et qui sont pertinents pour notre audience. En échange, nous toucherions une commission sur chaque vente. Par exemple, des outils de productivité ou des livres sur le développement personnel.
+                </li>
+                <li>
+                    <strong>Produits numériques :</strong> La création de produits à vendre est une excellente option. Cela pourrait inclure :
+                    <ul class="list-disc list-inside ml-8 mt-2 space-y-1">
+                        <li>Des guides ou des e-books détaillés sur nos sujets d'expertise.</li>
+                        <li>Des templates ou des fiches de travail pour aider les utilisateurs à atteindre leurs objectifs.</li>
+                        <li>Des formations en ligne ou des mini-cours.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Consultation ou coaching :</strong> Si nous avons des compétences que d'autres veulent acquérir, nous pourrions proposer des sessions de coaching individuelles ou des services de consultation. Cela permet d'avoir un contact direct et de proposer une valeur très élevée.
+                </li>
+                <li>
+                    <strong>Soutien communautaire :</strong> Nous pourrions mettre en place une page de dons ou de soutien via des plateformes comme Patreon, où les membres peuvent nous soutenir financièrement en échange de contenus exclusifs ou d'accès privilégié.
+                </li>
+                <li>
+                    <strong>Publicité :</strong> Une fois que notre audience aura grandi, nous pourrions envisager d'intégrer des publicités ciblées sur notre site web ou dans nos contenus.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section Prochaines étapes -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">Prochaines étapes</h2>
+            <p class="text-secondary-light mb-4">
+                Pour avancer, nous pourrions :
+            </p>
+            <ul class="list-disc list-inside text-secondary-light space-y-2 list-disc-gold">
+                <li>Évaluer chaque modèle de monétisation pour voir s'il correspond à nos valeurs.</li>
+                <li>Choisir une ou deux méthodes pour commencer.</li>
+                <li>Fixer des objectifs clairs et mesurables pour chaque modèle choisi.</li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('sidebar');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mainContent = document.querySelector('main');
+
+            mobileMenuButton.addEventListener('click', () => {
+                sidebar.classList.remove('-translate-x-full');
+            });
+
+            closeMenuButton.addEventListener('click', () => {
+                sidebar.classList.add('-translate-x-full');
+            });
+
+            // Fermer le menu si on clique en dehors
+            mainContent.addEventListener('click', () => {
+                if (!sidebar.classList.contains('-translate-x-full') && window.innerWidth < 768) {
+                    sidebar.classList.add('-translate-x-full');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreyaTheGiant - TDAH et atouts professionnels</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles de base - Palette Gothique */
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #1A1A1D; /* Charbon très foncé */
+            color: #E0E0E0; /* Gris clair pour le texte principal */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .bg-primary-dark { background-color: #0D0D0F; }
+        .text-secondary-light { color: #C0C0C0; }
+        .text-accent-gold { color: #FFD700; }
+        .border-accent-gold { border-color: #FFD700; }
+        .hover-gold-text:hover { color: #FFD700; }
+
+        /* Menu spécifique */
+        .nav-link.active {
+            color: #FFD700;
+            border-left: 4px solid #FFD700;
+            font-weight: bold;
+        }
+        .nav-link:hover {
+            background-color: rgba(255, 215, 0, 0.1);
+        }
+        
+        /* Styles spécifiques pour le menu mobile */
+        #mobile-menu-button {
+            z-index: 60;
+        }
+
+        .content-section {
+            background-color: #0D0D0F;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 2rem;
+        }
+
+        .list-disc-gold li::marker {
+            color: #FFD700;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col md:flex-row min-h-screen">
+
+    <!-- Bouton pour le menu mobile, visible uniquement sur les petits écrans -->
+    <button id="mobile-menu-button" class="md:hidden p-4 fixed top-4 right-4 z-50 text-secondary-light">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4" />
+        </svg>
+    </button>
+
+    <!-- Barre latérale (Sidebar) - Le menu de navigation unifié avec défilement -->
+    <aside id="sidebar" class="bg-primary-dark text-secondary-light w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out md:flex md:flex-col md:h-screen md:sticky md:top-0 md:z-auto overflow-y-auto z-50">
+        <div class="flex items-center justify-between px-4">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-3xl font-bold font-['Cinzel_Decorative'] text-accent-gold">FreyaTheGiant</span>
+            </a>
+            <button id="close-menu-button" class="md:hidden text-secondary-light hover:text-white transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    
+        <nav id="main-nav">
+            <!-- Mise à jour de la classe active pour la nouvelle page -->
+            <a href="index.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Accueil</a>
+            <a href="all-categories.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Toutes les catégories</a>
+            <a href="calendrier.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Calendrier</a>
+            <a href="tableau-de-bord.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Tableau de bord</a>
+            <a href="astuces-actions-et-prix.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Astuces, actions et prix</a>
+            <a href="communication.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Communication Efficace</a>
+            <a href="finance.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Planification Financière</a>
+            <a href="monetization.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Stratégie de Monétisation</a>
+            <a href="manager-role.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Rôle du Manager</a>
+            <a href="manager-benefits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Bénéfices pour le Manager</a>
+            <a href="limits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Nos Limites Absolues</a>
+            <a href="actions-et-etat.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Actions et État</a>
+            <a href="erotic-actions-et-consentement.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Actions Érotiques et Consentement</a>
+            <a href="promotion.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Promotion</a>
+            <a href="soutien-tdah.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Soutien TDAH</a>
+            <a href="gestion-persona.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Gérer son personnage en ligne</a>
+            <a href="support-emmotionel-homme.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Support émotionnel pour mon homme</a>
+            <a href="tdah-travail.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">TDAH et vie professionnelle</a>
+            <a href="tdah-avantages-travail.html" class="nav-link active block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">TDAH et travail : les bénéfices</a>
+        </nav>
+    </aside>
+
+    <!-- Contenu principal -->
+    <main class="flex-1 p-8 md:p-12 overflow-y-auto">
+        <h1 class="text-4xl md:text-5xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">TDAH et travail : les bénéfices</h1>
+        <p class="text-secondary-light mb-8 text-sm">
+            Loin d'être un simple fardeau, le TDAH peut être une source de talents et de compétences uniques qui peuvent être de véritables atouts en milieu professionnel.
+        </p>
+
+        <!-- Les forces insoupçonnées -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Créativité et pensée divergente</h2>
+            <p class="text-secondary-light mb-4">
+                Les personnes atteintes de TDAH ont souvent une imagination débordante et une capacité à faire des liens originaux entre des idées.
+            </p>
+            <ul class="list-disc list-disc-gold pl-6">
+                <li class="mb-2">**Pensée "hors des sentiers battus"** : Ils excellent dans la recherche de solutions innovantes et de nouvelles perspectives.</li>
+                <li class="mb-2">**Dynamisme créatif** : Leur enthousiasme et leur énergie peuvent stimuler la créativité et l'innovation au sein d'une équipe.</li>
+            </ul>
+        </div>
+        
+        <!-- Énergie et hyperfocus -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Énergie et hyperfocus</h2>
+            <p class="text-secondary-light mb-4">
+                L'hyperactivité, souvent vue comme un défaut, peut se transformer en une source d'énergie inépuisable lorsqu'une tâche est passionnante.
+            </p>
+            <ul class="list-disc list-disc-gold pl-6">
+                <li class="mb-2">**Productivité exceptionnelle** : L'hyperfocus permet de se plonger entièrement dans un projet, au point d'atteindre des niveaux de productivité rares et d'oublier la fatigue.</li>
+                <li class="mb-2">**Résilience** : La capacité à s'adapter rapidement à de nouvelles informations et à tirer des conclusions rapides est un atout précieux dans un environnement de travail en constante évolution.</li>
+            </ul>
+        </div>
+
+        <!-- Réactivité et adaptabilité -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Réactivité et adaptabilité</h2>
+            <p class="text-secondary-light mb-4">
+                Grâce à un traitement rapide de l'information, les personnes atteintes de TDAH sont souvent très réactives et capables de gérer des situations inattendues.
+            </p>
+            <ul class="list-disc list-disc-gold pl-6">
+                <li class="mb-2">**Adaptation rapide** : Ils s'adaptent facilement aux situations changeantes et peuvent prendre des décisions rapides sous pression, ce qui est idéal pour des rôles dynamiques.</li>
+                <li class="mb-2">**Soif de challenge** : Le besoin de stimulation peut les pousser à exceller dans des projets complexes et des rôles qui demandent de relever des défis constants.</li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('sidebar');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mainContent = document.querySelector('main');
+
+            // Toggle sidebar for mobile
+            mobileMenuButton.addEventListener('click', () => {
+                sidebar.classList.remove('-translate-x-full');
+            });
+
+            closeMenuButton.addEventListener('click', () => {
+                sidebar.classList.add('-translate-x-full');
+            });
+
+            // Close menu if clicking outside
+            mainContent.addEventListener('click', (e) => {
+                if (!sidebar.classList.contains('-translate-x-full') && window.innerWidth < 768 && !sidebar.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                    sidebar.classList.add('-translate-x-full');
+                }
+            });
+
+            // Gérer la classe 'active' pour les liens de navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            const currentPath = window.location.pathname.split('/').pop();
+            navLinks.forEach(link => {
+                const linkPath = link.href.split('/').pop();
+                if (linkPath === currentPath) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

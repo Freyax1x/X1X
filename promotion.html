@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreyaTheGiant - Promotion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles de base - Palette Gothique */
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #1A1A1D; /* Charbon très foncé */
+            color: #E0E0E0; /* Gris clair pour le texte principal */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .bg-primary-dark { background-color: #0D0D0F; }
+        .text-secondary-light { color: #C0C0C0; }
+        .text-accent-gold { color: #FFD700; }
+        .border-accent-gold { border-color: #FFD700; }
+        .hover-gold-text:hover { color: #FFD700; }
+
+        /* Menu spécifique */
+        .nav-link.active {
+            color: #FFD700;
+            border-left: 4px solid #FFD700;
+            font-weight: bold;
+        }
+        .nav-link:hover {
+            background-color: rgba(255, 215, 0, 0.1);
+        }
+        
+        /* Styles spécifiques pour le menu mobile */
+        #mobile-menu-button {
+            z-index: 60;
+        }
+
+        .content-section {
+            background-color: #0D0D0F;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 2rem;
+        }
+
+        .list-disc-gold li::marker {
+            color: #FFD700;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col md:flex-row min-h-screen">
+
+    <!-- Bouton pour le menu mobile, visible uniquement sur les petits écrans -->
+    <button id="mobile-menu-button" class="md:hidden p-4 fixed top-4 right-4 z-50 text-secondary-light">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4" />
+        </svg>
+    </button>
+
+    <!-- Barre latérale (Sidebar) - Le menu de navigation unifié avec défilement -->
+    <aside id="sidebar" class="bg-primary-dark text-secondary-light w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out md:flex md:flex-col md:h-screen md:sticky md:top-0 md:z-auto overflow-y-auto z-50">
+        <div class="flex items-center justify-between px-4">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-3xl font-bold font-['Cinzel_Decorative'] text-accent-gold">FreyaTheGiant</span>
+            </a>
+            <button id="close-menu-button" class="md:hidden text-secondary-light hover:text-white transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    
+        <nav id="main-nav">
+            <!-- Mise à jour de la classe active pour Promotion -->
+            <a href="index.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Accueil</a>
+            <a href="all-categories.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Toutes les catégories</a>
+            <a href="calendrier.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Calendrier</a>
+            <a href="tableau-de-bord.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Tableau de bord</a>
+            <a href="astuces-actions-et-prix.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Astuces, actions et prix</a>
+            <a href="communication.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Communication Efficace</a>
+            <a href="finance.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Planification Financière</a>
+            <a href="monetization.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Stratégie de Monétisation</a>
+            <a href="manager-role.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Rôle du Manager</a>
+            <a href="manager-benefits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Bénéfices pour le Manager</a>
+            <a href="limits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Nos Limites Absolues</a>
+            <a href="actions-et-etat.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Actions et État</a>
+            <a href="erotic-actions-et-consentement.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Actions Érotiques et Consentement</a>
+            <a href="promotion.html" class="nav-link active block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Promotion</a>
+            <a href="soutien-tdah.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Soutien TDAH</a>
+            <a href="gestion-persona.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Gérer son personnage en ligne</a>
+            <a href="support-emmotionel.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Support émotionnel pour mon homme</a>
+        </nav>
+    </aside>
+
+    <!-- Contenu principal -->
+    <main class="flex-1 p-8 md:p-12 overflow-y-auto">
+        <h1 class="text-4xl md:text-5xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Stratégies de Promotion</h1>
+        <p class="text-secondary-light mb-8 text-sm">
+            Découvrez des astuces et des techniques pour promouvoir votre contenu et augmenter votre visibilité.
+        </p>
+
+        <!-- Idées de Contenu pour la Promotion -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Idées de Contenu pour la Promotion</h2>
+            <p class="text-secondary-light mb-4">
+                Pour captiver votre public, variez vos formats de contenu. Voici quelques idées pour vos publications promotionnelles :
+            </p>
+            <ul class="list-disc list-disc-gold pl-6">
+                <li class="mb-2">**Bande-annonce (Teaser) de la prochaine session** : Créez une courte vidéo intrigante pour susciter l'intérêt.</li>
+                <li class="mb-2">**Photos exclusives des coulisses** : Montrez un aperçu de votre processus de création ou de votre environnement de travail.</li>
+                <li class="mb-2">**Sondages interactifs** : Posez des questions à votre communauté pour les impliquer et les faire voter sur le contenu à venir.</li>
+                <li class="mb-2">**Quiz ou jeux-concours** : Organisez des activités amusantes avec des récompenses pour engager activement votre audience.</li>
+                <li class="mb-2">**Histoires personnelles inspirantes** : Partagez des anecdotes ou des réussites pour créer un lien émotionnel.</li>
+            </ul>
+        </div>
+        
+        <!-- Contenu Vidéo : Le Roi de la Promotion -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Contenu Vidéo : Le Roi de la Promotion</h2>
+            <p class="text-secondary-light mb-4">
+                Le contenu vidéo est extrêmement efficace. Concentrez-vous sur la création de vidéos courtes et percutantes pour les plateformes comme TikTok et Instagram Reels.
+            </p>
+            <ul class="list-disc list-disc-gold pl-6">
+                <li class="mb-2">**Tutoriels rapides** : Partagez des astuces ou des démonstrations courtes.</li>
+                <li class="mb-2">**Tendances virales** : Reprenez des sons ou des formats populaires en les adaptant à votre contenu.</li>
+                <li class="mb-2">**Clips des meilleurs moments** : Extrayez des extraits marquants de vos sessions en direct ou de vos vidéos plus longues.</li>
+                <li class="mb-2">**Défis et challenges** : Lancez des défis à votre communauté pour créer de l'interaction.</li>
+            </ul>
+        </div>
+
+        <!-- Canaux de Promotion et Outils -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Canaux de Promotion et Outils</h2>
+            <p class="text-secondary-light mb-4">
+                Utilisez différents canaux pour toucher un public plus large.
+            </p>
+            <ul class="list-disc list-disc-gold pl-6">
+                <li class="mb-2">**Réseaux sociaux** :
+                    <ul class="list-disc list-disc-gold pl-6">
+                        <li class="mb-1">**Instagram** : Misez sur l'esthétique, les stories interactives et les Reels.</li>
+                        <li class="mb-1">**TikTok** : Créez du contenu court, amusant et tendance pour une visibilité maximale.</li>
+                        <li class="mb-1">**Twitter** : Utilisez des tweets percutants, des fils de discussion et des sondages pour engager votre public.</li>
+                        <li class="mb-1">N'oubliez pas d'utiliser des hashtags pertinents pour augmenter votre portée.</li>
+                    </ul>
+                </li>
+                <li class="mb-2">**Newsletters par e-mail** :
+                    <ul class="list-disc list-disc-gold pl-6">
+                        <li class="mb-1">Envoyez des mises à jour régulières, des offres exclusives et des invitations à vos abonnés.</li>
+                        <li class="mb-1">C'est un excellent moyen de fidéliser votre audience.</li>
+                    </ul>
+                </li>
+                <li class="mb-2">**Collaborations** :
+                    <ul class="list-disc list-disc-gold pl-6">
+                        <li class="mb-1">Collaborez avec d'autres créateurs pour vous présenter à de nouvelles communautés.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Stratégies de "Community Management" -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Stratégies de "Community Management"</h2>
+            <p class="text-secondary-light mb-4">
+                Une bonne promotion ne s'arrête pas à la publication. Interagissez avec votre public pour construire une communauté forte.
+            </p>
+            <ul class="list-disc list-disc-gold pl-6">
+                <li class="mb-2">**Répondez aux commentaires et aux messages** : Montrez à votre public que vous vous souciez de ses retours.</li>
+                <li class="mb-2">**Lancez des questions ouvertes** : Encouragez la conversation dans vos commentaires pour augmenter l'engagement.</li>
+                <li class="mb-2">**Mettez en avant le contenu de vos fans** : Partagez les créations de votre communauté (avec leur permission) pour les valoriser.</li>
+                <li class="mb-2">**Organisez des sessions de questions-réponses (Q&A)** : Une excellente façon de créer un lien personnel et direct.</li>
+            </ul>
+        </div>
+        
+        <!-- Analyse et Amélioration -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Analyse et Amélioration</h2>
+            <p class="text-secondary-light mb-4">
+                Pour que vos efforts de promotion portent leurs fruits, il est crucial de les analyser et de les ajuster.
+            </p>
+            <ul class="list-disc list-disc-gold pl-6">
+                <li class="mb-2">**Suivez vos statistiques** : Utilisez les outils d'analyse des réseaux sociaux pour voir ce qui fonctionne le mieux (vues, likes, partages, commentaires).</li>
+                <li class="mb-2">**Testez de nouvelles approches** : N'ayez pas peur d'expérimenter avec de nouveaux types de contenu ou de nouvelles plateformes.</li>
+                <li class="mb-2">**Adaptez votre stratégie** : Si une approche ne fonctionne pas, analysez pourquoi et changez de tactique.</li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('sidebar');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mainContent = document.querySelector('main');
+
+            // Toggle sidebar for mobile
+            mobileMenuButton.addEventListener('click', () => {
+                sidebar.classList.remove('-translate-x-full');
+            });
+
+            closeMenuButton.addEventListener('click', () => {
+                sidebar.classList.add('-translate-x-full');
+            });
+
+            // Close menu if clicking outside
+            mainContent.addEventListener('click', (e) => {
+                if (!sidebar.classList.contains('-translate-x-full') && window.innerWidth < 768 && !sidebar.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                    sidebar.classList.add('-translate-x-full');
+                }
+            });
+
+            // Gérer la classe 'active' pour les liens de navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            const currentPath = window.location.pathname.split('/').pop();
+            navLinks.forEach(link => {
+                const linkPath = link.href.split('/').pop();
+                if (linkPath === currentPath) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

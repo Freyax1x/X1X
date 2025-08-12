@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreyaTheGiant - Rôle du Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles de base - Palette Gothique */
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #1A1A1D; /* Charbon très foncé */
+            color: #E0E0E0; /* Gris clair pour le texte principal */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .bg-primary-dark { background-color: #0D0D0F; }
+        .text-secondary-light { color: #C0C0C0; }
+        .text-accent-gold { color: #FFD700; }
+        .border-accent-gold { border-color: #FFD700; }
+        .hover-gold-text:hover { color: #FFD700; }
+
+        /* Menu spécifique */
+        .nav-link.active {
+            color: #FFD700;
+            border-left: 4px solid #FFD700;
+            font-weight: bold;
+        }
+
+        /* Styles spécifiques pour le menu mobile */
+        #mobile-menu-button {
+            z-index: 60;
+        }
+
+        /* Styles pour les sections de contenu */
+        .content-section {
+            background-color: #0D0D0F;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 2rem;
+        }
+        
+        .list-disc-gold li::marker {
+            color: #FFD700;
+        }
+
+        /* Styles pour les champs de formulaire */
+        .form-input {
+            background-color: #2D2D31;
+            border: 1px solid #4D4D52;
+            color: #E0E0E0;
+            padding: 0.75rem;
+            border-radius: 0.25rem;
+            width: 100%;
+            transition: border-color 0.2s;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #FFD700;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col md:flex-row min-h-screen">
+
+    <!-- Bouton pour le menu mobile, visible uniquement sur les petits écrans -->
+    <button id="mobile-menu-button" class="md:hidden p-4 fixed top-4 right-4 z-50 text-secondary-light">
+        <!-- Icône de menu SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4" />
+        </svg>
+    </button>
+
+    <!-- Barre latérale (Sidebar) - Le menu de navigation unifié -->
+    <aside id="sidebar" class="bg-primary-dark text-secondary-light w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out md:flex md:flex-col md:h-screen md:sticky md:top-0 md:z-auto z-50">
+        <div class="flex items-center justify-between px-4">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-3xl font-bold font-['Cinzel_Decorative'] text-accent-gold">FreyaTheGiant</span>
+            </a>
+            <!-- Bouton de fermeture pour le menu mobile -->
+            <button id="close-menu-button" class="md:hidden text-secondary-light hover:text-white transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    
+        <nav id="main-nav">
+            <a href="index.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Accueil</a>
+            <a href="all-categories.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Toutes les catégories</a>
+            <a href="calendrier.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Calendrier</a>
+            <a href="tableau-de-bord.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Tableau de bord</a>
+            <a href="astuces-actions-et-prix.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Astuces, actions et prix</a>
+            <a href="communication.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Communication Efficace</a>
+            <a href="finance.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Planification Financière</a>
+            <a href="monetization.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Stratégie de Monétisation</a>
+            <a href="manager-role.html" class="nav-link active block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Rôle du Manager</a>
+            <a href="manager-benefits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Bénéfices pour le Manager</a>
+            <a href="limits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Nos Limites Absolutes</a>
+        </nav>
+    </aside>
+
+    <!-- Contenu principal -->
+    <main class="flex-1 p-8 md:p-12 overflow-y-auto">
+        <h1 class="text-4xl md:text-5xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Rôle du Manager</h1>
+        <p class="text-secondary-light mb-8">
+            Dans le cadre de notre projet, la personne qui endosse le rôle de manager joue un rôle crucial. Son rôle est de m'accompagner, de me soutenir et de structurer nos actions pour que nous puissions avancer efficacement, en tenant compte de mes besoins liés au TDAH et à l'autisme.
+        </p>
+
+        <!-- Section Les responsabilités principales -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">Les responsabilités principales</h2>
+            <p class="text-secondary-light mb-4">
+                Le rôle de manager se décline en plusieurs responsabilités clés :
+            </p>
+            <ul class="list-disc list-inside text-secondary-light space-y-4 list-disc-gold">
+                <li>
+                    <strong>Planification et Organisation :</strong> Il s'agit d'aider à définir les objectifs, à décomposer les grandes tâches en étapes plus petites et plus gérables, et à établir des échéances réalistes. Ce rôle aide à créer de la clarté et de la structure, ce qui est essentiel pour une personne avec TDAH.
+                </li>
+                <li>
+                    <strong>Suivi et Rappels :</strong> Le manager est là pour s'assurer que nous restons sur la bonne voie. Cela peut inclure des rappels doux pour les tâches à venir, la vérification des progrès et la célébration des petites victoires. C'est un soutien qui permet de maintenir la motivation et la concentration.
+                </li>
+                <li>
+                    <strong>Facilitateur de Communication :</strong> Dans les moments de confusion ou de surcharge sensorielle (liée à l'autisme), le manager peut aider à clarifier les informations, à simplifier les instructions et à s'assurer que je comprends bien les attentes.
+                </li>
+                <li>
+                    <strong>Soutien Émotionnel et Validation :</strong> Le manager doit aussi être un partenaire de soutien, capable de valider mes efforts et mes émotions. Un simple "Tu as fait du bon travail" ou "Je comprends ce que tu ressens" peut avoir un impact énorme sur mon bien-être et ma capacité à continuer.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Nouvelle section pour les notes et missions du manager -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">Notes du Manager & Missions Hebdomadaires</h2>
+            <p class="text-secondary-light mb-4">
+                Cette section permet au manager de prendre des notes importantes et de suivre les missions de la semaine.
+            </p>
+
+            <div class="mb-6">
+                <h3 class="text-2xl font-['Cinzel_Decorative'] font-bold mb-2 text-accent-gold">Mes Notes</h3>
+                <textarea id="manager-notes" class="form-input h-40" placeholder="Écrivez vos notes ici..."></textarea>
+                <button id="save-notes-btn" class="mt-2 py-2 px-4 rounded bg-accent-gold text-primary-dark font-bold hover:bg-yellow-600 transition duration-200">Sauvegarder les notes</button>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-['Cinzel_Decorative'] font-bold mb-2 text-accent-gold">Missions Hebdomadaires</h3>
+                <div class="flex space-x-2 mb-4">
+                    <input type="text" id="new-mission-input" class="form-input flex-1" placeholder="Ajouter une nouvelle mission...">
+                    <button id="add-mission-btn" class="py-2 px-4 rounded bg-accent-gold text-primary-dark font-bold hover:bg-yellow-600 transition duration-200">Ajouter</button>
+                </div>
+                <ul id="missions-list" class="space-y-2">
+                    <!-- Les missions s'afficheront ici -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Nouvelle section pour les tâches physiques et émotionnelles -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">Tâches Physiques et Émotionnelles du Manager</h2>
+            <p class="text-secondary-light mb-4">
+                Voici une liste détaillée des tâches que le manager devrait effectuer pour soutenir au mieux une personne ayant le TDAH et l'autisme.
+            </p>
+            <ul class="list-disc list-inside text-secondary-light space-y-4 list-disc-gold">
+                <li>
+                    <strong>Tâches Physiques/Concrètes :</strong>
+                    <ul class="list-disc list-inside ml-8 mt-2 space-y-1">
+                        <li>Vérifier le calendrier et les échéances.</li>
+                        <li>Préparer une liste de tâches claire et simple pour la semaine.</li>
+                        <li>S'assurer que l'environnement de travail est calme et ordonné avant les sessions de travail.</li>
+                        <li>Aider à minimiser les distractions (fermer les onglets non pertinents, mettre le téléphone en silencieux).</li>
+                        <li>Préparer les documents ou le matériel nécessaire pour une tâche spécifique.</li>
+                        <li>Proposer des pauses régulières et chronométrées (par exemple, la méthode Pomodoro).</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Tâches Émotionnelles/Relationnelles :</strong>
+                    <ul class="list-disc list-inside ml-8 mt-2 space-y-1">
+                        <li>Écouter activement et sans jugement.</li>
+                        <li>Valider les émotions et les défis, en disant par exemple "Je comprends que ce soit difficile".</li>
+                        <li>Pratiquer la patience et la douceur, surtout pendant les moments de frustration.</li>
+                        <li>Encourager et célébrer les petites réussites pour maintenir la motivation.</li>
+                        <li>Rappeler les objectifs à long terme et la vision du projet.</li>
+                        <li>Communiquer de manière claire et directe, en évitant le sarcasme ou les doubles sens.</li>
+                        <li>S'assurer que je me sens en sécurité et soutenu pour exprimer mes pensées.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('sidebar');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mainContent = document.querySelector('main');
+
+            mobileMenuButton.addEventListener('click', () => {
+                sidebar.classList.remove('-translate-x-full');
+            });
+
+            closeMenuButton.addEventListener('click', () => {
+                sidebar.classList.add('-translate-x-full');
+            });
+
+            // Fermer le menu si on clique en dehors
+            mainContent.addEventListener('click', (e) => {
+                if (!sidebar.classList.contains('-translate-x-full') && window.innerWidth < 768 && !sidebar.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                    sidebar.classList.add('-translate-x-full');
+                }
+            });
+
+            // --- Logique pour les notes et missions du manager ---
+            const notesTextarea = document.getElementById('manager-notes');
+            const saveNotesBtn = document.getElementById('save-notes-btn');
+            const newMissionInput = document.getElementById('new-mission-input');
+            const addMissionBtn = document.getElementById('add-mission-btn');
+            const missionsList = document.getElementById('missions-list');
+
+            // Sauvegarde et chargement des notes
+            saveNotesBtn.addEventListener('click', () => {
+                localStorage.setItem('managerNotes', notesTextarea.value);
+                alert('Notes sauvegardées !');
+            });
+
+            if (localStorage.getItem('managerNotes')) {
+                notesTextarea.value = localStorage.getItem('managerNotes');
+            }
+
+            // Sauvegarde et chargement des missions
+            let missions = JSON.parse(localStorage.getItem('weeklyMissions')) || [];
+
+            function renderMissions() {
+                missionsList.innerHTML = '';
+                missions.forEach((mission, index) => {
+                    const li = document.createElement('li');
+                    li.classList.add('flex', 'items-center', 'space-x-2', 'py-1');
+                    
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.checked = mission.completed;
+                    checkbox.classList.add('h-4', 'w-4', 'text-accent-gold', 'form-checkbox', 'rounded');
+                    checkbox.addEventListener('change', () => {
+                        missions[index].completed = checkbox.checked;
+                        localStorage.setItem('weeklyMissions', JSON.stringify(missions));
+                    });
+                    
+                    const span = document.createElement('span');
+                    span.textContent = mission.text;
+                    span.classList.add('flex-1');
+                    if (mission.completed) {
+                        span.style.textDecoration = 'line-through';
+                        span.style.color = '#7C7C83'; // Gris pour les tâches terminées
+                    }
+
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 hover:text-red-500 transition-colors duration-200" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm6 0a1 1 0 112 0v6a1 1 0 11-2 0V8z" clip-rule="evenodd" />
+                                          </svg>`;
+                    deleteBtn.addEventListener('click', () => {
+                        missions.splice(index, 1);
+                        localStorage.setItem('weeklyMissions', JSON.stringify(missions));
+                        renderMissions();
+                    });
+
+                    li.appendChild(checkbox);
+                    li.appendChild(span);
+                    li.appendChild(deleteBtn);
+                    missionsList.appendChild(li);
+                });
+            }
+
+            addMissionBtn.addEventListener('click', () => {
+                const text = newMissionInput.value.trim();
+                if (text) {
+                    missions.push({ text: text, completed: false });
+                    localStorage.setItem('weeklyMissions', JSON.stringify(missions));
+                    newMissionInput.value = '';
+                    renderMissions();
+                }
+            });
+
+            // Permettre d'ajouter une mission avec la touche "Entrée"
+            newMissionInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    addMissionBtn.click();
+                }
+            });
+
+            renderMissions();
+        });
+    </script>
+</body>
+</html>

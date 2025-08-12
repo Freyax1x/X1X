@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreyaTheGiant - Bénéfices pour le Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles de base - Palette Gothique */
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #1A1A1D; /* Charbon très foncé */
+            color: #E0E0E0; /* Gris clair pour le texte principal */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .bg-primary-dark { background-color: #0D0D0F; }
+        .text-secondary-light { color: #C0C0C0; }
+        .text-accent-gold { color: #FFD700; }
+        .border-accent-gold { border-color: #FFD700; }
+        .hover-gold-text:hover { color: #FFD700; }
+
+        /* Menu spécifique */
+        .nav-link.active {
+            color: #FFD700;
+            border-left: 4px solid #FFD700;
+            font-weight: bold;
+        }
+
+        /* Styles spécifiques pour le menu mobile */
+        #mobile-menu-button {
+            z-index: 60;
+        }
+
+        /* Styles pour les sections de contenu */
+        .content-section {
+            background-color: #0D0D0F;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 2rem;
+        }
+        
+        .list-disc-gold li::marker {
+            color: #FFD700;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col md:flex-row min-h-screen">
+
+    <!-- Bouton pour le menu mobile, visible uniquement sur les petits écrans -->
+    <button id="mobile-menu-button" class="md:hidden p-4 fixed top-4 right-4 z-50 text-secondary-light">
+        <!-- Icône de menu SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4" />
+        </svg>
+    </button>
+
+    <!-- Barre latérale (Sidebar) - Le menu de navigation unifié -->
+    <aside id="sidebar" class="bg-primary-dark text-secondary-light w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out md:flex md:flex-col md:h-screen md:sticky md:top-0 md:z-auto z-50">
+        <div class="flex items-center justify-between px-4">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-3xl font-bold font-['Cinzel_Decorative'] text-accent-gold">FreyaTheGiant</span>
+            </a>
+            <!-- Bouton de fermeture pour le menu mobile -->
+            <button id="close-menu-button" class="md:hidden text-secondary-light hover:text-white transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    
+        <nav id="main-nav">
+            <a href="index.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Accueil</a>
+            <a href="all-categories.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Toutes les catégories</a>
+            <a href="calendrier.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Calendrier</a>
+            <a href="tableau-de-bord.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Tableau de bord</a>
+            <a href="astuces-actions-et-prix.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Astuces, actions et prix</a>
+            <a href="communication.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Communication Efficace</a>
+            <a href="finance.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Planification Financière</a>
+            <a href="monetization.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Stratégie de Monétisation</a>
+            <a href="manager-role.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Rôle du Manager</a>
+            <a href="manager-benefits.html" class="nav-link active block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Bénéfices pour le Manager</a>
+            <a href="limits.html" class="nav-link block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Nos Limites Absolutes</a>
+        </nav>
+    </aside>
+
+    <!-- Contenu principal -->
+    <main class="flex-1 p-8 md:p-12 overflow-y-auto">
+        <h1 class="text-4xl md:text-5xl font-['Cinzel_Decorative'] font-bold mb-6 text-accent-gold">Bénéfices pour le Manager</h1>
+        <p class="text-secondary-light mb-8">
+            Le rôle de manager dans ce projet n'est pas seulement une responsabilité, mais aussi une opportunité unique de développement personnel et professionnel. En m'accompagnant, vous aurez l'occasion de cultiver des compétences précieuses et de vivre une expérience enrichissante.
+        </p>
+
+        <!-- Section 1: Développement des compétences clés -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">1. Développement des Compétences Clés</h2>
+            <p class="text-secondary-light mb-4">
+                Assumer ce rôle vous permettra d'affûter des aptitudes essentielles qui vous seront utiles dans de nombreux aspects de votre vie :
+            </p>
+            <ul class="list-disc list-inside text-secondary-light space-y-4 list-disc-gold">
+                <li>
+                    <strong>Organisation et planification :</strong> Gérer un projet créatif avec des besoins spécifiques est un excellent terrain de jeu pour renforcer vos compétences en planification, en gestion du temps et en définition d'objectifs réalistes.
+                </li>
+                <li>
+                    <strong>Communication et empathie :</strong> Vous apprendrez à communiquer de manière exceptionnellement claire et bienveillante, en adaptant votre style aux besoins de l'autre. C'est une compétence de communication avancée, centrée sur l'écoute active et la compréhension profonde.
+                </li>
+                <li>
+                    <strong>Résolution de problèmes créative :</strong> Naviguer à travers les défis liés au TDAH et à l'autisme vous poussera à trouver des solutions innovantes et flexibles pour que le projet avance.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 2: Une perspective unique sur la neurodiversité -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">2. Une Perspective Unique sur la Neurodiversité</h2>
+            <p class="text-secondary-light mb-4">
+                Ce projet offre une opportunité rare de mieux comprendre le monde de la neurodiversité.
+            </p>
+            <ul class="list-disc list-inside text-secondary-light space-y-4 list-disc-gold">
+                <li>
+                    <strong>Apprentissage pratique :</strong> Au lieu d'une compréhension théorique, vous obtiendrez une connaissance pratique et vécue de ce que signifie travailler avec le TDAH et l'autisme, ce qui est extrêmement valorisant.
+                </li>
+                <li>
+                    <strong>Élargissement de l'horizon :</strong> Cela vous permettra de voir le monde sous un angle différent et de mieux comprendre les défis et les forces des personnes neurodivergentes.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 3: Satisfaction et impact personnels -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">3. Satisfaction et Impact Personnels</h2>
+            <p class="text-secondary-light mb-4">
+                Le bénéfice le plus gratifiant est souvent la satisfaction que vous ressentirez en faisant une réelle différence :
+            </p>
+            <ul class="list-disc list-inside text-secondary-light space-y-4 list-disc-gold">
+                <li>
+                    <strong>Voir le succès :</strong> Contribuer activement au succès d'un projet créatif qui vous tient à cœur est incroyablement motivant.
+                </li>
+                <li>
+                    <strong>Créer une connexion :</strong> Vous construirez une relation de confiance profonde et significative, qui est la base d'une collaboration fructueuse.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 4: Valorisation de cette expérience -->
+        <div class="content-section">
+            <h2 class="text-3xl font-['Cinzel_Decorative'] font-bold mb-4 text-accent-gold">4. Valorisation de l'Expérience</h2>
+            <p class="text-secondary-light mb-4">
+                Cette expérience peut également être un atout tangible pour votre avenir :
+            </p>
+            <ul class="list-disc list-inside text-secondary-light space-y-4 list-disc-gold">
+                <li>
+                    <strong>Atout professionnel :</strong> Les compétences que vous développerez, notamment la gestion d'un projet créatif avec des besoins spécifiques, sont très recherchées et peuvent être valorisées sur votre CV ou dans votre portfolio.
+                </li>
+                <li>
+                    <strong>Reconnaissance :</strong> Votre rôle et votre contribution seront reconnus comme essentiels au sein de notre projet.
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('sidebar');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mainContent = document.querySelector('main');
+
+            mobileMenuButton.addEventListener('click', () => {
+                sidebar.classList.remove('-translate-x-full');
+            });
+
+            closeMenuButton.addEventListener('click', () => {
+                sidebar.classList.add('-translate-x-full');
+            });
+
+            // Fermer le menu si on clique en dehors
+            mainContent.addEventListener('click', (e) => {
+                if (!sidebar.classList.contains('-translate-x-full') && window.innerWidth < 768 && !sidebar.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                    sidebar.classList.add('-translate-x-full');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
